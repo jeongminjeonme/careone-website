@@ -1,33 +1,53 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta_title">CareOne — 기존 설비시스템에 혁신을 담다</title>
+  <title data-i18n="meta_title">주식회사 케어원 | AI 예지보전·기존 설비시스템에 혁신을 담다</title>
+
+  <!-- Robots & Crawlers -->
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light dark" />
 
   <!-- Basic SEO -->
-  <meta name="description" content="CareOne은 AIoT 기반 예지보전 솔루션으로 다운타임을 최소화하고 설비 성능을 극대화합니다." data-i18n-attr="content:meta_desc">
-  <meta name="keywords" content="주식회사 케어원, CareOne, 예지보전, 스마트팩토리, IoT, AI, MES 통합, 다운타임 감소" />
+  <meta name="description" content="주식회사 케어원은 AIoT 기반 예지보전 및 스마트팩토리 솔루션으로 설비 다운타임을 최소화하고 성능을 극대화합니다." data-i18n-attr="content:meta_desc">
+  <meta name="keywords" content="주식회사 케어원, CareOne, AI 예지보전, 스마트팩토리, IoT, AI, MES 통합, 다운타임 감소" />
+  <meta name="author" content="주식회사 케어원" />
 
   <!-- Canonical / hreflang -->
   <link rel="canonical" href="https://www.careone-analysis.store/"/>
   <link rel="alternate" href="https://www.careone-analysis.store/" hreflang="ko"/>
   <link rel="alternate" href="https://www.careone-analysis.store/?lang=en" hreflang="en"/>
+  <link rel="alternate" href="https://www.careone-analysis.store/" hreflang="x-default"/>
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="주식회사 케어원"/>
   <meta property="og:title" content="주식회사 케어원 | AI 예지보전·스마트팩토리 솔루션" data-i18n-attr="content:og_title"/>
-  <meta property="og:description" content="AI-powered predictive maintenance for maximum efficiency." data-i18n-attr="content:og_desc"/>
+  <meta property="og:description" content="AIoT 기반 예지보전과 스마트팩토리 솔루션으로 설비 성능 극대화" data-i18n-attr="content:og_desc"/>
   <meta property="og:url" content="https://www.careone-analysis.store/"/>
   <meta property="og:image" content="https://www.careone-analysis.store/og-image.jpg"/>
+  <meta property="og:image:alt" content="주식회사 케어원 - AI 예지보전 및 스마트팩토리"/>
+  <meta property="og:locale" content="ko_KR" id="og-locale"/>
+  <meta property="og:locale:alternate" content="en_US"/>
+
   <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="주식회사 케어원 | AI 예지보전·스마트팩토리 솔루션" data-i18n-attr="content:og_title"/>
+  <meta name="twitter:description" content="AIoT 기반 예지보전과 스마트팩토리 솔루션으로 설비 성능 극대화" data-i18n-attr="content:og_desc"/>
+  <meta name="twitter:image" content="https://www.careone-analysis.store/og-image.jpg"/>
 
+  <!-- Site Verification (발급값으로 교체됨) -->
+  <meta name="google-site-verification" content="z7R16YqQjhlKi4YbutLG_N3YM8625JoBqbA_qpL4SIQ" />
+  <!-- 주의: 네이버 메타 토큰은 보통 난수 문자열입니다. 값이 파일명 형식이면 HTML 파일 검증 방식을 의미하므로, 그 경우 루트에 해당 파일을 업로드하세요. -->
+  <meta name="naver-site-verification" content="naver0ccaace23aa1b2b6065ca012d1da5556.html" />
 
-  <meta name="google-site-verification" content="z7R16YqQjhlKi4YbutLG_N3YM8625JoBqbA_qpL4SIQ" /> 
-  <meta name="naver-site-verification" content="naver0ccaace23aa1b2b6065ca012d1da5556.html" /> 
-
-  <!-- Favicon -->
+  <!-- Favicon & Icons -->
   <link rel="icon" href="/favicon.ico"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -62,16 +82,19 @@
     }
   </style>
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD: Organization + Website + OfferCatalog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "#org",
     "name": "주식회사 케어원 (CareOne)",
     "alternateName": "CareOne",
     "url": "https://www.careone-analysis.store/",
     "logo": "https://www.careone-analysis.store/logo.png",
     "description": "AIoT 기반 예지보전 솔루션 기업",
+    "email": "mailto:jmjeon0212@gmail.com",
+    "telephone": "+82-70-4554-5104",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "KR",
@@ -83,8 +106,33 @@
       "@type": "ContactPoint",
       "telephone": "+82-70-4554-5104",
       "contactType": "customer support",
-      "areaServed": ["KR","EN"]
+      "areaServed": ["KR"],
+      "availableLanguage": ["ko","en"]
     }]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.careone-analysis.store/",
+    "name": "CareOne",
+    "inLanguage": ["ko","en"],
+    "publisher": {"@id": "#org"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "CareOne Solutions",
+    "provider": {"@id": "#org"},
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Smart Sensing", "serviceType": "Industrial IoT current/vibration sensing", "url": "https://www.careone-analysis.store/#solutions"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Prediction", "serviceType": "Anomaly detection & predictive maintenance", "url": "https://www.careone-analysis.store/#solutions"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "System Integration", "serviceType": "MES/ERP integration", "url": "https://www.careone-analysis.store/#solutions"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "24/7 Monitoring", "serviceType": "Remote condition monitoring & alerting", "url": "https://www.careone-analysis.store/#solutions"}}
+    ]
   }
   </script>
 </head>
@@ -96,8 +144,7 @@
       <div class="h-16 flex items-center justify-between">
         <!-- 로고 + 브랜드 -->
         <a href="#top" class="flex items-center gap-3 text-tech-blue font-bold">
-          <!-- logo.png를 리포지토리 루트에 두세요. 없으면 raw URL 사용 -->
-          <img src="/logo.png" alt="CareOne 로고" class="h-8 w-auto" loading="lazy">
+          <img src="/logo.png" alt="주식회사 케어원 로고" class="h-8 w-auto" loading="lazy">
           <span class="text-xl">CareOne</span>
         </a>
 
@@ -113,8 +160,8 @@
 
         <!-- 언어/모바일 버튼 -->
         <div class="flex items-center gap-2">
-          <button id="lang-kr" class="px-2 py-1 text-sm rounded border">KR</button>
-          <button id="lang-en" class="px-2 py-1 text-sm rounded border">EN</button>
+          <button id="lang-kr" class="px-2 py-1 text-sm rounded border" aria-label="한국어">KR</button>
+          <button id="lang-en" class="px-2 py-1 text-sm rounded border" aria-label="English">EN</button>
           <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open Menu">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -196,54 +243,31 @@
               </div>
             </div>
           </div>
-                  <!-- 적용 이미지 갤러리 -->
-<div class="mt-8 fade-in">
-  <h4 class="text-lg font-bold text-tech-blue mb-3" data-i18n="about_values_gallery">적용 사례 이미지</h4>
+          <!-- 적용 이미지 갤러리 -->
+          <div class="mt-8 fade-in">
+            <h4 class="text-lg font-bold text-tech-blue mb-3" data-i18n="about_values_gallery">적용 사례 이미지</h4>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    <!-- 공장 -->
-    <figure class="relative overflow-hidden rounded-xl shadow group">
-      <img src="factory01.png" alt="노후 공장 스마트화"
-           class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-           loading="lazy">
-      <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">
-        노후 공장 스마트화
-      </figcaption>
-    </figure>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- 공장 -->
+              <figure class="relative overflow-hidden rounded-xl shadow group">
+                <img src="factory01.png" alt="주식회사 케어원 AI 예지보전 적용사례 - 노후 공장 스마트화" class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+                <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">노후 공장 스마트화</figcaption>
+              </figure>
 
-    <!-- 발전소 -->
-    <figure class="relative overflow-hidden rounded-xl shadow group">
-      <img src="powerplant01.png" alt="발전소"
-           class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-           loading="lazy">
-      <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">
-        발전소
-      </figcaption>
-    </figure>
+              <!-- 발전소 -->
+              <figure class="relative overflow-hidden rounded-xl shadow group">
+                <img src="powerplant01.png" alt="주식회사 케어원 AI 기반 발전소 예지보전 적용사례" class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+                <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">발전소</figcaption>
+              </figure>
 
-    <!-- 공장 자동화/로보틱스 -->
-    <figure class="relative overflow-hidden rounded-xl shadow group">
-      <img src="automation01.png" alt="공장 자동화"
-           class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-           loading="lazy">
-      <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">
-        공장 자동화
-      </figcaption>
-    </figure>
+              <!-- 공장 자동화/로보틱스 -->
+              <figure class="relative overflow-hidden rounded-xl shadow group">
+                <img src="automation01.png" alt="주식회사 케어원 스마트팩토리 공장 자동화 솔루션 적용사례" class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+                <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">공장 자동화</figcaption>
+              </figure>
 
-    <!-- 필요시 더 추가 -->
-    <!--
-    <figure class="relative overflow-hidden rounded-xl shadow group">
-      <img src="/images/controlroom01.png" alt="제어실"
-           class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-           loading="lazy">
-      <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">
-        제어실
-      </figcaption>
-    </figure>
-    -->
-  </div>
-</div>
+            </div>
+          </div>
         </div>
 
 
@@ -387,7 +411,7 @@
         <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
           <div class="h-40 bg-gradient-to-br from-tech-blue to-light-blue"></div>
           <div class="p-6">
-            <div class="text-sm text-gray-500 mb-1">R&D</div>
+            <div class="text-sm text-gray-500 mb-1">R&amp;D</div>
             <h3 class="font-bold text-tech-blue" data-i18n="news_b">Next-gen anomaly model</h3>
           </div>
         </article>
@@ -428,9 +452,7 @@
         <div class="fade-in p-8 rounded-lg shadow border bg-gray-50">
           <h3 class="text-2xl font-bold text-tech-blue mb-4" data-i18n="contact_info">Contact Info</h3>
            <!-- 이미지 추가 (라운드+그림자) -->
-          <img src="office.png" 
-               alt="CareOne Office" 
-               class="mb-4 rounded-xl shadow-lg max-w-full h-auto border border-gray-200">
+          <img src="office.png" alt="주식회사 케어원 사무실 사진" class="mb-4 rounded-xl shadow-lg max-w-full h-auto border border-gray-200">
           <ul class="space-y-3 text-gray-700">
             <li><strong data-i18n="label_addr">Address:</strong> 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 창업보육센터 1동 102-1호</li>
             <li><strong data-i18n="label_tel">Tel:</strong> 070-4554-5104</li>
@@ -604,6 +626,11 @@
       });
       if(dict[lang].meta_title) document.title = dict[lang].meta_title;
 
+      // OG locale 동기화
+      const ogLocale = document.getElementById('og-locale');
+      if(ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_US' : 'ko_KR');
+
+      // URL 파라미터 동기화
       const url = new URL(window.location.href);
       if(lang==='en'){ url.searchParams.set('lang','en'); history.replaceState({},'',url); }
       else { url.searchParams.delete('lang'); history.replaceState({},'',url.pathname+url.search); }
@@ -618,18 +645,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
