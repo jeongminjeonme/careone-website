@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.careone-analysis.store/sitemap.xml
