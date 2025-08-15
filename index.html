@@ -96,6 +96,7 @@
       <div class="h-16 flex items-center justify-between">
         <!-- 로고 + 브랜드 -->
         <a href="#top" class="flex items-center gap-3 text-tech-blue font-bold">
+          <!-- logo.png를 리포지토리 루트에 두세요. 없으면 raw URL 사용 -->
           <img src="/logo.png" alt="CareOne 로고" class="h-8 w-auto" loading="lazy">
           <span class="text-xl">CareOne</span>
         </a>
@@ -171,25 +172,12 @@
               <h3 class="font-bold text-blue-800 mb-2" data-i18n="about_model_title">Business Model</h3>
               <p class="text-gray-700" data-i18n="about_model_body">Cloud SaaS + stepwise expansion aligned to growth.</p>
             </div>
-
-            <!-- 원스톱 서비스 -->
             <div class="p-6 rounded-lg text-white bg-gradient-to-r from-tech-blue to-light-blue">
               <h3 class="font-bold mb-2" data-i18n="about_service_title">One-stop Service</h3>
               <p data-i18n="about_service_body">From installation to operation and maintenance.</p>
             </div>
-
-            <!-- 설비 모니터링 이미지 (추가) -->
-            <figure class="mt-4">
-              <img
-                src="https://images.unsplash.com/photo-1581093458791-9d09cb5b8a3a?auto=format&fit=crop&w=1600&q=80"
-                alt="설비 모니터링 예시 화면"
-                class="rounded-lg shadow-md w-full object-cover">
-              <figcaption class="text-sm text-gray-500 mt-2">현장 설비 실시간 모니터링 예시</figcaption>
-            </figure>
           </div>
         </div>
-
-        <!-- Core Values 카드 -->
         <div class="fade-in">
           <div class="p-8 rounded-xl shadow-xl border bg-white">
             <h3 class="text-2xl font-bold text-tech-blue mb-6 text-center" data-i18n="about_values_title">Core Values</h3>
@@ -209,7 +197,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -262,8 +249,6 @@
         <p class="text-gray-600" data-i18n="vision_sub">Sustainable industrial innovation</p>
       </div>
       <div class="grid md:grid-cols-2 gap-10">
-
-        <!-- 매출 카드 그대로 유지 -->
         <div class="fade-in p-6 rounded-xl border bg-white shadow">
           <h3 class="text-xl font-bold text-tech-blue mb-4" data-i18n="vision_sales">Revenue Growth</h3>
           <ul class="space-y-3 text-gray-700">
@@ -272,29 +257,12 @@
             <li class="flex justify-between bg-gradient-to-r from-orange-500 to-yellow-400 text-white rounded-lg px-4 py-3"><span data-i18n="vision_2026">2026 (Target)</span><strong>2B KRW</strong></li>
           </ul>
         </div>
-
-        <!-- 주요 성과: 사용자 제공 목록 반영 -->
         <div class="fade-in p-6 rounded-xl border bg-white shadow">
-          <h3 class="text-xl font-bold text-tech-blue mb-4">주요 성과</h3>
-          <ul class="text-gray-700 space-y-2">
-            <li><strong>2024/03</strong> — 24년도 창업중심대학 예비창업자 선정 (최우수 등급 판정)</li>
-            <li><strong>2024/05</strong> — 경상대 도전 K-스타트업 2024 본선진출</li>
-            <li><strong>2024/06/01</strong> — 숭실대 캠퍼스타운 사업 참여 (24/06/01~24/12/31)</li>
-            <li><strong>2024/07/01</strong> — 진주형 1인창조기업 육성사업 참여 (24/07/01~25/06/30)</li>
-            <li><strong>2024/07/01</strong> — 진주창업지원센터(상평산단혁신지원센터) 입주</li>
-            <li><strong>2024/07/17</strong> — 주식회사 케어원 창업(설립)</li>
-            <li><strong>2024/07/24</strong> — 경상국립대 동남권 창업중심대학 창업아이템 챌린지 기초교육 수료</li>
-            <li><strong>2024/08</strong> — 윌로특허사무소 지식재산권 교육 수료(전정민)</li>
-            <li><strong>2024/10</strong> — 창원 청년기술창업 경진대회 본선진출</li>
-            <li><strong>2025/02</strong> — 기업부설연구소 설립 (제2025110701호)</li>
-            <li><strong>2025/03</strong> — 25년 충북 청년창업사관학교 입교(15기)</li>
-            <li><strong>2025/03</strong> — 24년 경상국립대 연구소기업 입주공간 입주기업 선정 (25.03.01~26.02.28)</li>
-            <li><strong>2025/04</strong> — 국립부경대학교 산학협력 프로젝트 협약 (스마트팩토리 자동화 및 AI기반 설비 고장진단)</li>
-            <li><strong>2025/05</strong> — 25년 부천창업리그 장려상 (부천산업진흥원)</li>
-            <li><strong>2025/06</strong> — 경남진주 강소특구 이노테크(예비초기) 선정</li>
-            <li><strong>2025/07</strong> — 인도네시아 스마트팩토리 구축사업 개발 수행 (매출액 2억원)</li>
-            <li><strong>2025/08</strong> — 건국대학교 글로컬기술지주 기술이전 및 연구소기업 설립</li>
-            <li><strong>2025/08</strong> — 벤처인증 진행중</li>
+          <h3 class="text-xl font-bold text-tech-blue mb-4" data-i18n="vision_achieve">Key Achievements</h3>
+          <ul class="text-gray-700 space-y-2 list-disc pl-5">
+            <li data-i18n="vision_a1">Selected for Youth Startup Academy (15th)</li>
+            <li data-i18n="vision_a2">Indonesia Smart Factory project</li>
+            <li data-i18n="vision_a3">Corporate R&D center and academia collaboration</li>
           </ul>
         </div>
       </div>
@@ -399,43 +367,6 @@
     </div>
   </section>
 
-  <!-- Naver Map Section (추가) -->
-  <section class="bg-gray-50 py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-tech-blue mb-6">오시는 길 (Naver Map)</h2>
-
-      <!-- 1) 즉시 작동하는 썸네일 + 버튼 (기본 표시) -->
-      <div id="map-fallback" class="rounded-xl overflow-hidden border bg-white shadow">
-        <div class="aspect-[16/9] w-full">
-          <img
-            src="https://staticmap.openstreetmap.de/staticmap.php?center=35.1537,128.0982&zoom=14&size=1200x675&maptype=mapnik&markers=35.1537,128.0982,lightblue1"
-            alt="회사 위치 지도 썸네일"
-            class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 flex items-center justify-between">
-          <div class="text-gray-600 text-sm">경남 진주시 진주대로 501 (경상대 가좌캠퍼스 BI센터 1동 102-1호)</div>
-          <a href="https://naver.me/5cqAY84n" target="_blank" rel="noopener"
-             class="px-4 py-2 rounded-lg bg-green-500 text-white font-semibold hover:brightness-110">네이버 지도에서 열기</a>
-        </div>
-      </div>
-
-      <!-- 2) 네이버 지도 JS API (API 키 넣으면 자동 활성) -->
-      <!-- 사용법: 아래 스크립트 src의 YOUR_NCP_CLIENT_ID 를 본인 키로 교체하면 됩니다. -->
-      <!--
-      <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_NCP_CLIENT_ID"></script>
-      <div id="naverMap" class="mt-6 rounded-xl overflow-hidden border bg-white shadow" style="height:480px"></div>
-      <script>
-        if (window.naver && window.naver.maps) {
-          document.getElementById('map-fallback').style.display = 'none';
-          const pos = new naver.maps.LatLng(35.1537, 128.0982);
-          const map = new naver.maps.Map('naverMap', { center: pos, zoom: 14 });
-          new naver.maps.Marker({ position: pos, map });
-        }
-      </script>
-      -->
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="bg-dark-gray text-white py-12">
     <div class="max-w-7xl mx-auto px-4">
@@ -491,7 +422,7 @@
     // Dummy form
     $('#contact-form')?.addEventListener('submit', e => { e.preventDefault(); alert('문의해 주셔서 감사합니다! / Thank you!'); e.target.reset(); });
 
-    // i18n (원문 그대로 유지 + ko/en 딕셔너리)
+    // i18n
     const dict = {
       ko: {
         meta_title:"CareOne — 기존 설비시스템에 혁신을 담다",
@@ -518,12 +449,12 @@
         sol_monitoring:"실시간 모니터링", sol_monitoring_desc:"24/7 감시 및 알림",
         vision_title:"비전 & 성장", vision_sub:"지속 가능한 산업 혁신",
         vision_sales:"매출 성장 현황", vision_2024:"2024 실적", vision_2025:"2025 (예정)", vision_2026:"2026 (목표)",
-        vision_achieve:"주요 성과",
-        team_title:"전문가 팀", team_sub:"혁신을 이끄는 인재",
-        team_ceo:"전정민 CEO", team_ceo_role:"IoT & 무선 네트워크",
-        team_ceo_b1:"컴퓨터공학 석사 • 임베디드/HW", team_ceo_b2:"국가과제·수상",
-        team_core:"핵심 구성", team_m1:"AI 책임연구원 — 이상탐지", team_m2:"영업이사 — B2B 전략", team_m3:"통합솔루션 책임 — 20년", team_m4:"개발책임 — 스마트팩토리/MES",
-        news_title:"최신 소식", news_sub:"케어원 업데이트",
+        vision_achieve:"주요 성과", vision_a1:"청년창업사관학교 15기 선정", vision_a2:"인도네시아 스마트팩토리 계약수주 매출액 2억원 ", vision_a3:"기업부설연구소·산학협력·연구소기업 설립·벤처인증 中 ",
+        team_title:"케어원 핵심 연구팀", team_sub:"혁신을 이끄는 인재",
+        team_ceo:"전정민 CEO", team_ceo_role:"ETRI 국가과제 박사연구원 출신",
+        team_ceo_b1:"경희대 컴퓨터공학 석사 • IoT H/W &S/W", team_ceo_b2:"국가과제· NIA 대상 및 KT통신사상 수상",
+        team_core:"핵심 구성", team_m1:"AI 책임연구원 — 이상탐지 논문 다수개제", team_m2:"영업이사 — B2B 전략 및 해외 영업 ", team_m3:"통합솔루션 책임 — 삼성전자 책임연구원 출신 20년 경력 ", team_m4:"개발책임 — LG 에너지 솔루션 출신 스마트팩토리/MES 전담",
+        news_title:"최신 소식", news_sub:"케어원 업데이트", news_a:"스마트팩토리 솔루션 확장", news_b:"차세대 이상탐지 모델", news_c:"해외 파트너십",
         contact_title:"함께 혁신을 만들어가세요", contact_info:"연락처 정보",
         form_name:"성함", form_email:"이메일", form_msg:"문의 내용", form_submit:"문의하기",
         label_addr:"주소", label_tel:"전화", btn_map:"네이버 지도에서 길찾기",
@@ -555,12 +486,12 @@
         sol_monitoring:"24/7 Monitoring", sol_monitoring_desc:"Continuous watch & instant alerts",
         vision_title:"Vision & Growth", vision_sub:"Sustainable industrial innovation",
         vision_sales:"Revenue Growth", vision_2024:"2024", vision_2025:"2025 (Plan)", vision_2026:"2026 (Target)",
-        vision_achieve:"Key Achievements",
+        vision_achieve:"Key Achievements", vision_a1:"Youth Startup Academy (15th)", vision_a2:"Indonesia smart factory", vision_a3:"R&D center & academia collaboration",
         team_title:"Our Team", team_sub:"People driving innovation",
         team_ceo:"Jeong-min Jeon, CEO", team_ceo_role:"IoT & Wireless Networks",
         team_ceo_b1:"MS in CE • Embedded/HW", team_ceo_b2:"Gov. projects & awards",
         team_core:"Core Members", team_m1:"Lead AI Researcher — Anomaly detection", team_m2:"Sales Director — B2B strategy", team_m3:"Head of Integration — 20y dev", team_m4:"Head of Dev — Smart factory/MES",
-        news_title:"News", news_sub:"CareOne updates",
+        news_title:"News", news_sub:"CareOne updates", news_a:"Smart factory solution expansion", news_b:"Next-gen anomaly model", news_c:"Overseas partnerships",
         contact_title:"Get in Touch", contact_info:"Contact Info",
         form_name:"Name", form_email:"Email", form_msg:"Message", form_submit:"Send",
         label_addr:"Address", label_tel:"Tel", btn_map:"Open in Naver Map",
@@ -595,3 +526,5 @@
   </script>
 </body>
 </html>
+
+
