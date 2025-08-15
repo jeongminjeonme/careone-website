@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta_title">CareOne — 기존 설비시스템에 혁신을 담다</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="CareOne은 AIoT 기반 예지보전 솔루션으로 다운타임을 최소화하고 설비 성능을 극대화합니다." data-i18n-attr="content:meta_desc">
+  <meta name="keywords" content="주식회사 케어원, CareOne, 예지보전, 스마트팩토리, IoT, AI, MES 통합, 다운타임 감소" />
+
+  <!-- Canonical / hreflang -->
+  <link rel="canonical" href="https://careone.co.kr/"/>
+  <link rel="alternate" href="https://careone.co.kr/" hreflang="ko"/>
+  <link rel="alternate" href="https://careone.co.kr/?lang=en" hreflang="en"/>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="CareOne — Minimize Downtime. Maximize Performance." data-i18n-attr="content:og_title"/>
+  <meta property="og:description" content="AI-powered predictive maintenance for maximum efficiency." data-i18n-attr="content:og_desc"/>
+  <meta property="og:url" content="https://careone.co.kr/"/>
+  <meta property="og:image" content="https://careone.co.kr/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- (선택) 사이트 소유확인: 발급값으로 교체 -->
+  <!-- <meta name="google-site-verification" content="구글_발급값" /> -->
+  <!-- <meta name="naver-site-verification" content="네이버_발급값" /> -->
+
+  <link rel="icon" href="/favicon.ico"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors:{'tech-blue':'#0D47A1','light-blue':'#42A5F5','dark-gray':'#212121'},
+          fontFamily:{'sans':['system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','sans-serif']}
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{margin:0;overflow-x:hidden;color:#212121}
+    .min-h-screen-fix{min-height:100svh}
+    .hero-bg{
+      background:linear-gradient(rgba(13,71,161,.85),rgba(13,71,161,.85)),
+      url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+    }
+    .card-hover{transition:transform .25s ease,box-shadow .25s ease}
+    .card-hover:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,.12)}
+    .fade-in{opacity:0;transform:translateY(18px);transition:all .5s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    .industrial-pattern{
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(66,165,245,.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(13,71,161,.08) 0%, transparent 50%);
+    }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "주식회사 케어원 (CareOne)",
+    "alternateName": "CareOne",
+    "url": "https://careone.co.kr/",
+    "logo": "https://careone.co.kr/logo.png",
+    "description": "AIoT 기반 예지보전 솔루션 기업",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KR",
+      "addressRegion": "Gyeongnam",
+      "addressLocality": "Jinju-si",
+      "streetAddress": "경상남도 진주시 진주대로 501 경상대학교 가좌캠퍼스 창업보육센터 1동 102-1호"
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+82-70-4554-5104",
+      "contactType": "customer support",
+      "areaServed": ["KR","EN"]
+    }]
+  }
+  </script>
+</head>
+<body class="font-sans">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="h-16 flex items-center justify-between">
+        <a href="#top" class="text-2xl font-bold text-tech-blue">CareOne</a>
+        <div class="hidden md:flex gap-8 text-[15px]">
+          <a href="#about" class="hover:text-tech-blue" data-i18n="nav_about">About Us</a>
+          <a href="#solutions" class="hover:text-tech-blue" data-i18n="nav_solutions">Solutions</a>
+          <a href="#vision" class="hover:text-tech-blue" data-i18n="nav_vision">Vision</a>
+          <a href="#team" class="hover:text-tech-blue" data-i18n="nav_team">Team</a>
+          <a href="#news" class="hover:text-tech-blue" data-i18n="nav_news">News</a>
+          <a href="#contact" class="hover:text-tech-blue" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="lang-kr" class="px-2 py-1 text-sm rounded border">KR</button>
+          <button id="lang-en" class="px-2 py-1 text-sm rounded border">EN</button>
+          <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open Menu">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden pb-3">
+        <div class="grid gap-2 text-[15px]">
+          <a href="#about" class="py-2" data-i18n="nav_about">About Us</a>
+          <a href="#solutions" class="py-2" data-i18n="nav_solutions">Solutions</a>
+          <a href="#vision" class="py-2" data-i18n="nav_vision">Vision</a>
+          <a href="#team" class="py-2" data-i18n="nav_team">Team</a>
+          <a href="#news" class="py-2" data-i18n="nav_news">News</a>
+          <a href="#contact" class="py-2" data-i18n="nav_contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="hero-bg min-h-screen-fix flex items-center justify-center text-center text-white">
+    <div class="max-w-4xl mx-auto px-4 pt-16">
+      <h1 class="fade-in text-5xl md:text-7xl font-extrabold leading-tight mb-6" data-i18n="hero_title">
+        Minimize Downtime.<br/>Maximize Performance.
+      </h1>
+      <p class="fade-in text-xl md:text-2xl mb-8 opacity-95" data-i18n="hero_sub">
+        AI-powered predictive maintenance for maximum efficiency.
+      </p>
+      <div class="fade-in flex flex-wrap items-center justify-center gap-4">
+        <a href="#solutions" class="px-8 py-4 rounded-lg text-lg font-semibold bg-light-blue hover:brightness-110" data-i18n="hero_cta1">View Solutions</a>
+        <a href="#contact" class="px-8 py-4 rounded-lg text-lg font-semibold border-2 border-white hover:bg-white hover:text-tech-blue" data-i18n="hero_cta2">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-gray-50 industrial-pattern">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="fade-in">
+          <h2 class="text-4xl font-bold text-tech-blue mb-6" data-i18n="about_title">How CareOne Changes the Game</h2>
+          <div class="space-y-6">
+            <div class="p-6 rounded-lg bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-400">
+              <h3 class="font-bold text-red-800 mb-2" data-i18n="about_limit_title">The Limit Today</h3>
+              <p class="text-gray-700" data-i18n="about_limit_body">High cost and complexity make maintenance hard to adopt.</p>
+            </div>
+            <div class="p-6 rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-400">
+              <h3 class="font-bold text-green-800 mb-2" data-i18n="about_approach_title">CareOne’s Approach</h3>
+              <p class="text-gray-700" data-i18n="about_approach_body">Modular rollout with reasonable cost so any factory can start smart.</p>
+            </div>
+            <div class="p-6 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400">
+              <h3 class="font-bold text-blue-800 mb-2" data-i18n="about_model_title">Business Model</h3>
+              <p class="text-gray-700" data-i18n="about_model_body">Cloud SaaS + stepwise expansion aligned to growth.</p>
+            </div>
+            <div class="p-6 rounded-lg text-white bg-gradient-to-r from-tech-blue to-light-blue">
+              <h3 class="font-bold mb-2" data-i18n="about_service_title">One-stop Service</h3>
+              <p data-i18n="about_service_body">From installation to operation and maintenance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in">
+          <div class="p-8 rounded-xl shadow-xl border bg-white">
+            <h3 class="text-2xl font-bold text-tech-blue mb-6 text-center" data-i18n="about_values_title">Core Values</h3>
+            <div class="grid md:grid-cols-3 gap-4 text-center">
+              <div class="p-4 rounded-lg bg-light-blue/10">
+                <div class="text-lg font-bold" data-i18n="about_values_access">Accessibility</div>
+                <div class="text-sm text-gray-600" data-i18n="about_values_access_sub">For every factory</div>
+              </div>
+              <div class="p-4 rounded-lg bg-light-blue/10">
+                <div class="text-lg font-bold" data-i18n="about_values_ai">Intelligence</div>
+                <div class="text-sm text-gray-600" data-i18n="about_values_ai_sub">AI diagnostics</div>
+              </div>
+              <div class="p-4 rounded-lg bg-light-blue/10">
+                <div class="text-lg font-bold" data-i18n="about_values_scale">Scalability</div>
+                <div class="text-sm text-gray-600" data-i18n="about_values_scale_sub">Modular growth</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-14 fade-in">
+        <h2 class="text-4xl font-bold text-tech-blue mb-3" data-i18n="sol_title">Integrated Solutions</h2>
+        <p class="text-gray-600 text-lg" data-i18n="sol_sub">Comprehensive AIoT platform for the shop floor</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <article class="card-hover p-8 rounded-lg shadow border bg-white fade-in text-center">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-light-blue flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1M4 12H3m18 0h-1M6.34 6.34l-.7-.7M18.36 6.34l.7-.7M8 17a4 4 0 118 0"/></svg>
+          </div>
+          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_sensing">Smart Sensing</h3>
+          <p class="text-gray-600" data-i18n="sol_sensing_desc">Real-time current/vibration data capture</p>
+        </article>
+        <article class="card-hover p-8 rounded-lg shadow border bg-white fade-in text-center">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-light-blue flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 13l3 3 7-7"/></svg>
+          </div>
+          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_ai">AI Prediction</h3>
+          <p class="text-gray-600" data-i18n="sol_ai_desc">Pattern learning for early anomaly detection</p>
+        </article>
+        <article class="card-hover p-8 rounded-lg shadow border bg-white fade-in text-center">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-light-blue flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6M4 6h16M4 18h16"/></svg>
+          </div>
+          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_integration">System Integration</h3>
+          <p class="text-gray-600" data-i18n="sol_integration_desc">Unified ops with MES/ERP</p>
+        </article>
+        <article class="card-hover p-8 rounded-lg shadow border bg-white fade-in text-center">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-light-blue flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.5 12C4 6.5 7.5 4 12 4s8 2.5 9.5 8c-1.5 5.5-5 8-9.5 8S4 17.5 2.5 12zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
+          </div>
+          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_monitoring">24/7 Monitoring</h3>
+          <p class="text-gray-600" data-i18n="sol_monitoring_desc">Continuous watch & instant alerts</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section id="vision" class="py-20 bg-gray-50 industrial-pattern">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="vision_title">Vision & Growth</h2>
+        <p class="text-gray-600" data-i18n="vision_sub">Sustainable industrial innovation</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="fade-in p-6 rounded-xl border bg-white shadow">
+          <h3 class="text-xl font-bold text-tech-blue mb-4" data-i18n="vision_sales">Revenue Growth</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between bg-gradient-to-r from-tech-blue to-light-blue text-white rounded-lg px-4 py-3"><span data-i18n="vision_2024">2024</span><strong>88.5M KRW</strong></li>
+            <li class="flex justify-between bg-gradient-to-r from-green-500 to-emerald-400 text-white rounded-lg px-4 py-3"><span data-i18n="vision_2025">2025 (Plan)</span><strong>400M KRW</strong></li>
+            <li class="flex justify-between bg-gradient-to-r from-orange-500 to-yellow-400 text-white rounded-lg px-4 py-3"><span data-i18n="vision_2026">2026 (Target)</span><strong>2B KRW</strong></li>
+          </ul>
+        </div>
+        <div class="fade-in p-6 rounded-xl border bg-white shadow">
+          <h3 class="text-xl font-bold text-tech-blue mb-4" data-i18n="vision_achieve">Key Achievements</h3>
+          <ul class="text-gray-700 space-y-2 list-disc pl-5">
+            <li data-i18n="vision_a1">Selected for Youth Startup Academy (15th)</li>
+            <li data-i18n="vision_a2">Indonesia Smart Factory project</li>
+            <li data-i18n="vision_a3">Corporate R&D center and academia collaboration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="team_title">Our Team</h2>
+        <p class="text-gray-600" data-i18n="team_sub">People driving innovation</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 fade-in">
+        <div class="rounded-xl p-8 text-white bg-gradient-to-br from-tech-blue to-light-blue shadow">
+          <h3 class="text-2xl font-bold mb-1" data-i18n="team_ceo">Jeong-min Jeon, CEO</h3>
+          <p class="opacity-90 mb-4" data-i18n="team_ceo_role">IoT & Wireless Networks</p>
+          <ul class="text-sm space-y-2">
+            <li data-i18n="team_ceo_b1">MS in Computer Engineering • Embedded/HW</li>
+            <li data-i18n="team_ceo_b2">Gov. projects & awards</li>
+          </ul>
+        </div>
+        <div class="rounded-xl p-8 border bg-white shadow">
+          <h3 class="text-2xl font-bold text-tech-blue mb-4" data-i18n="team_core">Core Members</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li data-i18n="team_m1">Lead AI Researcher — Anomaly detection</li>
+            <li data-i18n="team_m2">Sales Director — B2B strategy</li>
+            <li data-i18n="team_m3">Head of Integration — 20y development</li>
+            <li data-i18n="team_m4">Head of Dev — Smart factory/MES</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="py-20 bg-gray-50 industrial-pattern">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="news_title">News</h2>
+        <p class="text-gray-600" data-i18n="news_sub">CareOne updates</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
+          <div class="h-40 bg-gradient-to-br from-green-500 to-emerald-600"></div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-1">2025</div>
+            <h3 class="font-bold text-tech-blue" data-i18n="news_a">Smart factory solution expansion</h3>
+          </div>
+        </article>
+        <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
+          <div class="h-40 bg-gradient-to-br from-tech-blue to-light-blue"></div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-1">R&D</div>
+            <h3 class="font-bold text-tech-blue" data-i18n="news_b">Next-gen anomaly model</h3>
+          </div>
+        </article>
+        <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
+          <div class="h-40 bg-gradient-to-br from-light-blue to-blue-400"></div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-1">Global</div>
+            <h3 class="font-bold text-tech-blue" data-i18n="news_c">Overseas partnerships</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="contact_title">Get in Touch</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        <form id="contact-form" class="fade-in p-8 rounded-lg shadow border bg-gray-50" aria-label="contact form">
+          <label class="block mb-4">
+            <span class="block text-sm font-medium mb-1" data-i18n="form_name">Name</span>
+            <input name="name" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-tech-blue" required />
+          </label>
+          <label class="block mb-4">
+            <span class="block text-sm font-medium mb-1" data-i18n="form_email">Email</span>
+            <input type="email" name="email" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-tech-blue" required />
+          </label>
+          <label class="block mb-6">
+            <span class="block text-sm font-medium mb-1" data-i18n="form_msg">Message</span>
+            <textarea rows="5" name="message" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-tech-blue" required></textarea>
+          </label>
+          <button class="w-full bg-tech-blue hover:bg-blue-800 text-white py-3 rounded-lg font-semibold" data-i18n="form_submit">Send</button>
+        </form>
+
+        <div class="fade-in p-8 rounded-lg shadow border bg-gray-50">
+          <h3 class="text-2xl font-bold text-tech-blue mb-4" data-i18n="contact_info">Contact Info</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li><strong data-i18n="label_addr">Address:</strong> 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 창업보육센터 1동 102-1호</li>
+            <li><strong data-i18n="label_tel">Tel:</strong> 070-4554-5104</li>
+            <li><strong>Email:</strong> jmjeon0212@gmail.com</li>
+          </ul>
+          <a href="https://naver.me/5cqAY84n" target="_blank" rel="noopener" class="inline-block mt-6 px-6 py-3 rounded-full text-white bg-gradient-to-r from-tech-blue to-light-blue hover:brightness-110" data-i18n="btn_map">Open in Naver Map</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark-gray text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="text-2xl font-bold text-light-blue mb-3">CareOne</div>
+          <p class="text-gray-300 text-sm" data-i18n="footer_tag">Innovation in legacy equipment.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3" data-i18n="footer_sol">Solutions</h4>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li data-i18n="sol_sensing">Smart Sensing</li>
+            <li data-i18n="sol_ai">AI Prediction</li>
+            <li data-i18n="sol_integration">System Integration</li>
+            <li data-i18n="sol_monitoring">24/7 Monitoring</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3" data-i18n="footer_company">Company</h4>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li><a href="#about" data-i18n="nav_about">About Us</a></li>
+            <li><a href="#vision" data-i18n="nav_vision">Vision</a></li>
+            <li><a href="#news" data-i18n="nav_news">News</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3" data-i18n="footer_connect">Connect</h4>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            <li data-i18n="footer_partner">Partnership</li>
+            <li data-i18n="footer_support">Tech Support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+        © 2025 CareOne. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS: 메뉴/애니메이션/폼/i18n -->
+  <script>
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
+
+    // Mobile menu
+    $('#mobile-menu-btn')?.addEventListener('click', () => $('#mobile-menu').classList.toggle('hidden'));
+
+    // Fade-in
+    const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting && e.target.classList.add('visible')); }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+    $$('.fade-in').forEach(el => io.observe(el));
+
+    // Dummy form
+    $('#contact-form')?.addEventListener('submit', e => { e.preventDefault(); alert('문의해 주셔서 감사합니다! / Thank you!'); e.target.reset(); });
+
+    // i18n
+    const dict = {
+      ko: {
+        meta_title:"CareOne — 기존 설비시스템에 혁신을 담다",
+        meta_desc:"CareOne은 AIoT 기반 예지보전 솔루션으로 다운타임을 최소화하고 설비 성능을 극대화합니다.",
+        og_title:"CareOne — Minimize Downtime. Maximize Performance.",
+        og_desc:"AI 기반 예지보전으로 효율을 극대화하세요.",
+        nav_about:"회사소개", nav_solutions:"솔루션", nav_vision:"비전", nav_team:"팀", nav_news:"소식", nav_contact:"문의",
+        hero_title:"다운타임을 최소화하고\n성능을 극대화합니다.",
+        hero_sub:"AI 기반 예지보전으로 효율을 극대화하세요.",
+        hero_cta1:"솔루션 보기", hero_cta2:"문의하기",
+        about_title:"CareOne이 만드는 변화",
+        about_limit_title:"현재의 한계", about_limit_body:"높은 비용과 복잡성으로 도입이 어려움",
+        about_approach_title:"CareOne의 접근", about_approach_body:"모듈형 도입과 합리적 비용으로 누구나 시작",
+        about_model_title:"비즈니스 모델", about_model_body:"클라우드 SaaS + 단계적 확장",
+        about_service_title:"원스톱 서비스", about_service_body:"설치–운영–유지보수 통합 제공",
+        about_values_title:"핵심 가치",
+        about_values_access:"접근성", about_values_access_sub:"모든 기업 대상",
+        about_values_ai:"지능화", about_values_ai_sub:"AI 진단",
+        about_values_scale:"확장성", about_values_scale_sub:"모듈형 성장",
+        sol_title:"통합 솔루션", sol_sub:"현장에 맞춘 종합 AIoT 플랫폼",
+        sol_sensing:"스마트 센싱", sol_sensing_desc:"전류/진동 등 실시간 데이터",
+        sol_ai:"AI 예측 분석", sol_ai_desc:"패턴학습 기반 이상 조기감지",
+        sol_integration:"시스템 통합", sol_integration_desc:"MES/ERP 연동 운영 일원화",
+        sol_monitoring:"실시간 모니터링", sol_monitoring_desc:"24/7 감시 및 알림",
+        vision_title:"비전 & 성장", vision_sub:"지속 가능한 산업 혁신",
+        vision_sales:"매출 성장 현황", vision_2024:"2024 실적", vision_2025:"2025 (예정)", vision_2026:"2026 (목표)",
+        vision_achieve:"주요 성과", vision_a1:"청년창업사관학교 15기 선정", vision_a2:"인도네시아 스마트팩토리", vision_a3:"기업부설연구소·산학협력",
+        team_title:"전문가 팀", team_sub:"혁신을 이끄는 인재",
+        team_ceo:"전정민 CEO", team_ceo_role:"IoT & 무선 네트워크",
+        team_ceo_b1:"컴퓨터공학 석사 • 임베디드/HW", team_ceo_b2:"국가과제·수상",
+        team_core:"핵심 구성", team_m1:"AI 책임연구원 — 이상탐지", team_m2:"영업이사 — B2B 전략", team_m3:"통합솔루션 책임 — 20년", team_m4:"개발책임 — 스마트팩토리/MES",
+        news_title:"최신 소식", news_sub:"케어원 업데이트", news_a:"스마트팩토리 솔루션 확장", news_b:"차세대 이상탐지 모델", news_c:"해외 파트너십",
+        contact_title:"함께 혁신을 만들어가세요", contact_info:"연락처 정보",
+        form_name:"성함", form_email:"이메일", form_msg:"문의 내용", form_submit:"문의하기",
+        label_addr:"주소", label_tel:"전화", btn_map:"네이버 지도에서 길찾기",
+        footer_tag:"기존 설비시스템에 혁신을 담다.",
+        footer_sol:"솔루션", footer_company:"회사", footer_connect:"연결", footer_partner:"파트너십", footer_support:"기술 지원"
+      },
+      en: {
+        meta_title:"CareOne — Minimize Downtime. Maximize Performance.",
+        meta_desc:"CareOne delivers AIoT predictive maintenance to cut downtime and boost equipment performance.",
+        og_title:"CareOne — Minimize Downtime. Maximize Performance.",
+        og_desc:"AI-powered predictive maintenance for maximum efficiency.",
+        nav_about:"About Us", nav_solutions:"Solutions", nav_vision:"Vision", nav_team:"Team", nav_news:"News", nav_contact:"Contact",
+        hero_title:"Minimize Downtime.\nMaximize Performance.",
+        hero_sub:"AI-powered predictive maintenance for maximum efficiency.",
+        hero_cta1:"View Solutions", hero_cta2:"Contact Us",
+        about_title:"How CareOne Changes the Game",
+        about_limit_title:"The Limit Today", about_limit_body:"High cost and complexity hinder adoption.",
+        about_approach_title:"CareOne’s Approach", about_approach_body:"Modular rollout at reasonable cost for everyone.",
+        about_model_title:"Business Model", about_model_body:"Cloud SaaS with stepwise expansion.",
+        about_service_title:"One-stop Service", about_service_body:"Installation, operation and maintenance.",
+        about_values_title:"Core Values",
+        about_values_access:"Accessibility", about_values_access_sub:"For every factory",
+        about_values_ai:"Intelligence", about_values_ai_sub:"AI diagnostics",
+        about_values_scale:"Scalability", about_values_scale_sub:"Modular growth",
+        sol_title:"Integrated Solutions", sol_sub:"Comprehensive AIoT platform for the shop floor",
+        sol_sensing:"Smart Sensing", sol_sensing_desc:"Real-time current/vibration data",
+        sol_ai:"AI Prediction", sol_ai_desc:"Early anomaly detection via pattern learning",
+        sol_integration:"System Integration", sol_integration_desc:"Unified ops with MES/ERP",
+        sol_monitoring:"24/7 Monitoring", sol_monitoring_desc:"Continuous watch & instant alerts",
+        vision_title:"Vision & Growth", vision_sub:"Sustainable industrial innovation",
+        vision_sales:"Revenue Growth", vision_2024:"2024", vision_2025:"2025 (Plan)", vision_2026:"2026 (Target)",
+        vision_achieve:"Key Achievements", vision_a1:"Youth Startup Academy (15th)", vision_a2:"Indonesia smart factory", vision_a3:"R&D center & academia collaboration",
+        team_title:"Our Team", team_sub:"People driving innovation",
+        team_ceo:"Jeong-min Jeon, CEO", team_ceo_role:"IoT & Wireless Networks",
+        team_ceo_b1:"MS in CE • Embedded/HW", team_ceo_b2:"Gov. projects & awards",
+        team_core:"Core Members", team_m1:"Lead AI Researcher — Anomaly detection", team_m2:"Sales Director — B2B strategy", team_m3:"Head of Integration — 20y dev", team_m4:"Head of Dev — Smart factory/MES",
+        news_title:"News", news_sub:"CareOne updates", news_a:"Smart factory solution expansion", news_b:"Next-gen anomaly model", news_c:"Overseas partnerships",
+        contact_title:"Get in Touch", contact_info:"Contact Info",
+        form_name:"Name", form_email:"Email", form_msg:"Message", form_submit:"Send",
+        label_addr:"Address", label_tel:"Tel", btn_map:"Open in Naver Map",
+        footer_tag:"Innovation in legacy equipment.",
+        footer_sol:"Solutions", footer_company:"Company", footer_connect:"Connect", footer_partner:"Partnership", footer_support:"Tech Support"
+      }
+    };
+
+    function applyLang(lang){
+      // text nodes
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(dict[lang][key]) el.innerText = dict[lang][key];
+      });
+      // attributes
+      document.querySelectorAll('[data-i18n-attr]').forEach(el=>{
+        const [attr, key] = el.getAttribute('data-i18n-attr').split(':');
+        if(dict[lang][key]) el.setAttribute(attr, dict[lang][key]);
+      });
+      // title
+      if(dict[lang].meta_title) document.title = dict[lang].meta_title;
+      // query flag for hreflang alt
+      const url = new URL(window.location.href);
+      if(lang==='en'){ url.searchParams.set('lang','en'); history.replaceState({},'',url); }
+      else { url.searchParams.delete('lang'); history.replaceState({},'',url.pathname+url.search); }
+    }
+
+    // init
+    const initial = new URL(location.href).searchParams.get('lang') === 'en' ? 'en' : 'ko';
+    applyLang(initial);
+
+    $('#lang-kr').addEventListener('click', ()=>applyLang('ko'));
+    $('#lang-en').addEventListener('click', ()=>applyLang('en'));
+  </script>
+</body>
+</html>
