@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>CareOne — 기존 설비시스템에 혁신을 담다</title>
+    <link>https://www.careone-analysis.store/</link>
+    <description>CareOne은 AIoT 기반 예지보전 솔루션으로 다운타임을 최소화하고 설비 성능을 극대화합니다.</description>
+    <language>ko</language>
+    <pubDate>Sat, 16 Aug 2025 09:00:00 +0900</pubDate>
+    <lastBuildDate>Sat, 16 Aug 2025 09:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>솔루션 소개</title>
+      <link>https://www.careone-analysis.store/solution</link>
+      <description>AIoT 기반 예지보전 솔루션 소개</description>
+      <pubDate>Sat, 16 Aug 2025 09:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>회사 소개</title>
+      <link>https://www.careone-analysis.store/about</link>
+      <description>㈜케어원의 비전과 기업 정보</description>
+      <pubDate>Sat, 16 Aug 2025 09:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>문의하기</title>
+      <link>https://www.careone-analysis.store/contact</link>
+      <description>제품 및 서비스 관련 문의</description>
+      <pubDate>Sat, 16 Aug 2025 09:00:00 +0900</pubDate>
+    </item>
+
+  </channel>
+</rss>
