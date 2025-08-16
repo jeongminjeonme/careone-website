@@ -55,7 +55,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
-  <!-- Tailwind (기존 사용 유지) -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -153,13 +153,10 @@
   <nav class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b">
     <div class="max-w-7xl mx-auto px-4">
       <div class="h-16 flex items-center justify-between">
-        <!-- 로고 + 브랜드 -->
         <a href="#top" class="flex items-center gap-3 text-tech-blue font-bold">
           <img src="/logo.png" alt="주식회사 케어원 로고" class="h-8 w-auto" loading="lazy">
           <span class="text-xl">CareOne</span>
         </a>
-
-        <!-- 데스크톱 메뉴 -->
         <div class="hidden md:flex gap-8 text-[15px]">
           <a href="#about" class="hover:text-tech-blue" data-i18n="nav_about">About Us</a>
           <a href="#solutions" class="hover:text-tech-blue" data-i18n="nav_solutions">Solutions</a>
@@ -168,8 +165,6 @@
           <a href="#news" class="hover:text-tech-blue" data-i18n="nav_news">News</a>
           <a href="#contact" class="hover:text-tech-blue" data-i18n="nav_contact">Contact</a>
         </div>
-
-        <!-- 언어/모바일 버튼 -->
         <div class="flex items-center gap-2">
           <button id="lang-kr" class="px-2 py-1 text-sm rounded border" aria-label="한국어">KR</button>
           <button id="lang-en" class="px-2 py-1 text-sm rounded border" aria-label="English">EN</button>
@@ -254,34 +249,26 @@
               </div>
             </div>
           </div>
+
           <!-- 적용 이미지 갤러리 -->
           <div class="mt-8 fade-in">
             <h4 class="text-lg font-bold text-tech-blue mb-3" data-i18n="about_values_gallery">적용 사례 이미지</h4>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <!-- 공장 -->
               <figure class="relative overflow-hidden rounded-xl shadow group">
                 <img src="factory01.png" alt="주식회사 케어원 AI 예지보전 적용사례 - 노후 공장 스마트화" class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
                 <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">노후 공장 스마트화</figcaption>
               </figure>
-
-              <!-- 발전소 -->
               <figure class="relative overflow-hidden rounded-xl shadow group">
                 <img src="powerplant01.png" alt="주식회사 케어원 AI 기반 발전소 예지보전 적용사례" class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
                 <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">발전소</figcaption>
               </figure>
-
-              <!-- 공장 자동화/로보틱스 -->
               <figure class="relative overflow-hidden rounded-xl shadow group">
                 <img src="automation01.png" alt="주식회사 케어원 스마트팩토리 공장 자동화 솔루션 적용사례" class="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
                 <figcaption class="absolute bottom-0 inset-x-0 bg-black/45 text-white text-xs px-3 py-2">공장 자동화</figcaption>
               </figure>
-
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </section>
@@ -326,37 +313,52 @@
     </div>
   </section>
 
-  <!-- Vision -->
+  <!-- Vision (단일 섹션, 스파크 차트 포함) -->
   <section id="vision" class="py-20 bg-gray-50 industrial-pattern">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 fade-in">
         <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="vision_title">Vision & Growth</h2>
         <p class="text-gray-600" data-i18n="vision_sub">Sustainable industrial innovation</p>
       </div>
+
       <div class="grid md:grid-cols-2 gap-10">
+        <!-- 매출 성장 현황 카드 -->
         <div class="fade-in p-6 rounded-xl border bg-white shadow">
           <h3 class="text-xl font-bold text-tech-blue mb-4" data-i18n="vision_sales">Revenue Growth</h3>
           <ul class="space-y-3 text-gray-700">
-            <li class="flex justify-between bg-gradient-to-r from-tech-blue to-light-blue text-white rounded-lg px-4 py-3"><span data-i18n="vision_2024">2024</span><strong>88.5M KRW</strong></li>
-            <li class="flex justify-between bg-gradient-to-r from-green-500 to-emerald-400 text-white rounded-lg px-4 py-3"><span data-i18n="vision_2025">2025 (Plan)</span><strong>400M KRW</strong></li>
-            <li class="flex justify-between bg-gradient-to-r from-orange-500 to-yellow-400 text-white rounded-lg px-4 py-3"><span data-i18n="vision_2026">2026 (Target)</span><strong>2B KRW</strong></li>
+            <li class="flex justify-between bg-gradient-to-r from-tech-blue to-light-blue text-white rounded-lg px-4 py-3">
+              <span data-i18n="vision_2024">2024</span><strong>88.5M KRW</strong>
+            </li>
+            <li class="flex justify-between bg-gradient-to-r from-green-500 to-emerald-400 text-white rounded-lg px-4 py-3">
+              <span data-i18n="vision_2025">2025 (Plan)</span><strong>400M KRW</strong>
+            </li>
+            <li class="flex justify-between bg-gradient-to-r from-orange-500 to-yellow-400 text-white rounded-lg px-4 py-3">
+              <span data-i18n="vision_2026">2026 (Target)</span><strong>2B KRW</strong>
+            </li>
           </ul>
+          <div class="mt-4">
+            <canvas id="salesSpark" style="max-height:160px;"></canvas>
+          </div>
         </div>
+
+        <!-- 주요 성과 카드 -->
         <div class="fade-in p-6 rounded-xl border bg-white shadow">
           <h3 class="text-xl font-bold text-tech-blue mb-4" data-i18n="vision_achieve">Key Achievements</h3>
           <ul class="text-gray-700 space-y-2 list-disc pl-5">
-              <li data-i18n="vision_a1">Graduated with top grade from University-based Startup Incubation (Pre-startup) in 2024</li>
-              <li data-i18n="vision_a2">Participated in Soongsil Univ. Campus Town program</li>
-              <li data-i18n="vision_a3">Participated in Jinju One-Person Creative Business program</li>
-              <li data-i18n="vision_a4">Moved into Jinju Startup Support Center (Sangpyeong Industrial Innovation Center)</li>
-              <li data-i18n="vision_a5">Incorporated CareOne Co., Ltd. (Jul 2024)</li>
-              <li data-i18n="vision_a6">Established Corporate R&D Center (No. 2025110701)</li>
-              <li data-i18n="vision_a7">Admitted to Chungbuk Youth Startup Academy, 15th cohort (2025)</li>
-              <li data-i18n="vision_a8">Selected for GNUE lab-company workspace tenancy</li>
-              <li data-i18n="vision_a9">Signed industry–academia project with Pukyong National University</li>
-              <li data-i18n="vision_a10">Won Encouragement Award at Bucheon Startup League 2025</li>
-              <li data-i18n="vision_a11">Executed Indonesia smart factory project (KRW 200M revenue)</li>
-              <li data-i18n="vision_a12">Tech transfer with Konkuk Univ. Glocal Holdings; lab-company founding & venture certification in progress</li>
+            <li data-i18n="vision_a1">Graduated with top grade from University-based Startup Incubation (Pre-startup) in 2024</li>
+            <li data-i18n="vision_a2">Participated in Soongsil Univ. Campus Town program</li>
+            <li data-i18n="vision_a3">Participated in Jinju One-Person Creative Business program</li>
+            <li data-i18n="vision_a4">Moved into Jinju Startup Support Center (Sangpyeong Industrial Innovation Center)</li>
+
+            <!-- 굵게 표시 4개 -->
+            <li><span class="font-bold" data-i18n="vision_a5">Incorporated CareOne Co., Ltd. (Jul 2024)</span></li>
+            <li data-i18n="vision_a6">Established Corporate R&D Center (No. 2025110701)</li>
+            <li><span class="font-bold" data-i18n="vision_a7">Admitted to Chungbuk Youth Startup Academy, 15th cohort (2025)</span></li>
+            <li data-i18n="vision_a8">Selected for GNUE lab-company workspace tenancy</li>
+            <li data-i18n="vision_a9">Signed industry–academia project with Pukyong National University</li>
+            <li data-i18n="vision_a10">Won Encouragement Award at Bucheon Startup League 2025</li>
+            <li><span class="font-bold" data-i18n="vision_a11">Executed Indonesia smart factory project (KRW 200M revenue)</span></li>
+            <li><span class="font-bold" data-i18n="vision_a12">Tech transfer with Konkuk Univ. Glocal Holdings; lab-company founding & venture certification in progress</span></li>
           </ul>
         </div>
       </div>
@@ -382,22 +384,22 @@
         <div class="rounded-xl p-8 border bg-white shadow">
           <h3 class="text-2xl font-bold text-tech-blue mb-4" data-i18n="team_core">Core Members</h3>
           <ul class="space-y-3 text-gray-700">
-          <li>
-            <div class="font-semibold text-gray-900" data-i18n="team_m1_title">Lead AI Researcher</div>
-            <div><span>— </span><span data-i18n="team_m1_desc">Anomaly detection; publications</span></div>
-          </li>
-          <li>
-            <div class="font-semibold text-gray-900" data-i18n="team_m2_title">Sales Director</div>
-            <div><span>— </span><span data-i18n="team_m2_desc">B2B strategy & overseas sales</span></div>
-          </li>
-          <li>
-            <div class="font-semibold text-gray-900" data-i18n="team_m3_title">Head of Integration</div>
-            <div><span>— </span><span data-i18n="team_m3_desc">20y development experience</span></div>
-          </li>
-          <li>
-            <div class="font-semibold text-gray-900" data-i18n="team_m4_title">Head of Development</div>
-            <div><span>— </span><span data-i18n="team_m4_desc">Smart factory / MES</span></div>
-          </li>
+            <li>
+              <div class="font-semibold text-gray-900" data-i18n="team_m1_title">Lead AI Researcher</div>
+              <div>— <span data-i18n="team_m1_desc">Anomaly detection; publications</span></div>
+            </li>
+            <li>
+              <div class="font-semibold text-gray-900" data-i18n="team_m2_title">Sales Director</div>
+              <div>— <span data-i18n="team_m2_desc">B2B strategy & overseas sales</span></div>
+            </li>
+            <li>
+              <div class="font-semibold text-gray-900" data-i18n="team_m3_title">Head of Integration</div>
+              <div>— <span data-i18n="team_m3_desc">20y development experience</span></div>
+            </li>
+            <li>
+              <div class="font-semibold text-gray-900" data-i18n="team_m4_title">Head of Development</div>
+              <div>— <span data-i18n="team_m4_desc">Smart factory / MES</span></div>
+            </li>
           </ul>
         </div>
       </div>
@@ -462,7 +464,6 @@
 
         <div class="fade-in p-8 rounded-lg shadow border bg-gray-50">
           <h3 class="text-2xl font-bold text-tech-blue mb-4" data-i18n="contact_info">Contact Info</h3>
-           <!-- 이미지 추가 (라운드+그림자) -->
           <img src="office.png" alt="주식회사 케어원 사무실 사진" class="mb-4 rounded-xl shadow-lg max-w-full h-auto border border-gray-200">
           <ul class="space-y-3 text-gray-700">
             <li><strong data-i18n="label_addr">Address:</strong> 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 창업보육센터 1동 102-1호</li>
@@ -557,19 +558,31 @@
         sol_monitoring:"실시간 모니터링", sol_monitoring_desc:"24/7 감시 및 알림",
         vision_title:"비전 & 성장", vision_sub:"지속 가능한 산업 혁신",
         vision_sales:"매출 성장 현황", vision_2024:"2024 실적", vision_2025:"2025 (예정)", vision_2026:"2026 (목표)",
-        vision_achieve: "주요 성과", vision_a1: "24년도 창업중심대학 예비창업자 최우수 등급 졸업", vision_a2: "숭실대 캠퍼스타운 사업 참여", vision_a3: "진주형 1인창조기업 육성사업 참여", vision_a4: "진주창업지원센터(상평산단혁신지원센터) 입주", vision_a5: "24년 7월 주식회사 케어원 창업(설립)", vision_a6: "기업부설연구소 설립 (제2025110701호)", vision_a7: "25년 충북 청년창업사관학교 입교(15기)", vision_a8: "경상국립대 연구소기업 입주공간 입주기업 선정", vision_a9: "국립부경대학교 산학협력 프로젝트 협약", vision_a10: "25년 부천창업리그 장려상 (부천산업진흥원)", vision_a11: "인도네시아 스마트팩토리 구축사업 개발 수행 (매출액 2억원)", vision_a12: "건국대학교 글로컬기술지주 기술이전 및 연구소기업 설립 및 벤처인증 中",
+        vision_achieve:"주요 성과",
+        vision_a1:"24년도 창업중심대학 예비창업자 최우수 등급 졸업",
+        vision_a2:"숭실대 캠퍼스타운 사업 참여",
+        vision_a3:"진주형 1인창조기업 육성사업 참여",
+        vision_a4:"진주창업지원센터(상평산단혁신지원센터) 입주",
+        vision_a5:"24년 7월 주식회사 케어원 창업(설립)",
+        vision_a6:"기업부설연구소 설립 (제2025110701호)",
+        vision_a7:"25년 충북 청년창업사관학교 입교(15기)",
+        vision_a8:"경상국립대 연구소기업 입주공간 입주기업 선정",
+        vision_a9:"국립부경대학교 산학협력 프로젝트 협약",
+        vision_a10:"25년 부천창업리그 장려상 (부천산업진흥원)",
+        vision_a11:"인도네시아 스마트팩토리 구축사업 개발 수행 (매출액 2억원)",
+        vision_a12:"건국대학교 글로컬기술지주 기술이전 및 연구소기업 설립 및 벤처인증 中",
         team_title:"케어원 핵심 연구팀", team_sub:"혁신을 이끄는 인재",
         team_ceo:"전정민 CEO", team_ceo_role:"ETRI 국가과제 박사연구원 출신",
         team_ceo_b1:"경희대 컴퓨터공학 석사 • IoT H/W &S/W", team_ceo_b2:"국가과제· NIA 대상 및 KT통신사상 수상",
-        team_core: "핵심 구성",
-        team_m1_title: "AI 책임연구원",
-        team_m1_desc: "고려대학교 전기전자공학 학·석사 졸업. 이상탐지 논문 다수 게재",
-        team_m2_title: "영업이사",
-        team_m2_desc: "코스닥 등록기업 IT기술상무 및 부사장 역임 / B2B 전략 및 해외 영업",
-        team_m3_title: "통합솔루션 책임",
-        team_m3_desc: "삼성전자 책임연구원 출신 20년 경력",
-        team_m4_title: "개발책임",
-        team_m4_desc: "LG 에너지 솔루션 출신 스마트팩토리/MES 전담",
+        team_core:"핵심 구성",
+        team_m1_title:"AI 책임연구원",
+        team_m1_desc:"고려대학교 전기전자공학 학·석사 졸업. 이상탐지 논문 다수 게재",
+        team_m2_title:"영업이사",
+        team_m2_desc:"코스닥 등록기업 IT기술상무 및 부사장 역임 / B2B 전략 및 해외 영업",
+        team_m3_title:"통합솔루션 책임",
+        team_m3_desc:"삼성전자 책임연구원 출신 20년 경력",
+        team_m4_title:"개발책임",
+        team_m4_desc:"LG 에너지 솔루션 출신 스마트팩토리/MES 전담",
         news_title:"최신 소식", news_sub:"케어원 업데이트", news_a:"스마트팩토리 솔루션 확장", news_b:"차세대 이상탐지 모델", news_c:"해외 파트너십",
         contact_title:"함께 혁신을 만들어가세요", contact_info:"연락처 정보",
         form_name:"성함", form_email:"이메일", form_msg:"문의 내용", form_submit:"문의하기",
@@ -602,20 +615,31 @@
         sol_monitoring:"24/7 Monitoring", sol_monitoring_desc:"Continuous watch & instant alerts",
         vision_title:"Vision & Growth", vision_sub:"Sustainable industrial innovation",
         vision_sales:"Revenue Growth", vision_2024:"2024", vision_2025:"2025 (Plan)", vision_2026:"2026 (Target)",
-        vision_achieve: "Key Achievements", vision_a1: "Graduated with top grade from University-based Startup Incubation (Pre-startup) in 2024", vision_a2: "Participated in Soongsil Univ. Campus Town program", vision_a3: "Participated in Jinju One-Person Creative Business program", vision_a4: "Moved into Jinju Startup Support Center (Sangpyeong Industrial Innovation Center)", vision_a5: "Incorporated CareOne Co., Ltd. (Jul 2024)", vision_a6: "Established Corporate R&D Center (No. 2025110701)", vision_a7: "Admitted to Chungbuk Youth Startup Academy, 15th cohort (2025)", vision_a8: "Selected for GNUE lab-company workspace tenancy", vision_a9: "Signed industry–academia project with Pukyong National University", vision_a10: "Won Encouragement Award at Bucheon Startup League 2025", vision_a11: "Executed Indonesia smart factory project (KRW 200M revenue)", vision_a12: "Technology transfer with Konkuk Univ. Glocal Holdings; lab-company founding & venture certification in progress",
-
+        vision_achieve:"Key Achievements",
+        vision_a1:"Graduated with top grade from University-based Startup Incubation (Pre-startup) in 2024",
+        vision_a2:"Participated in Soongsil Univ. Campus Town program",
+        vision_a3:"Participated in Jinju One-Person Creative Business program",
+        vision_a4:"Moved into Jinju Startup Support Center (Sangpyeong Industrial Innovation Center)",
+        vision_a5:"Incorporated CareOne Co., Ltd. (Jul 2024)",
+        vision_a6:"Established Corporate R&D Center (No. 2025110701)",
+        vision_a7:"Admitted to Chungbuk Youth Startup Academy, 15th cohort (2025)",
+        vision_a8:"Selected for GNUE lab-company workspace tenancy",
+        vision_a9:"Signed industry–academia project with Pukyong National University",
+        vision_a10:"Won Encouragement Award at Bucheon Startup League 2025",
+        vision_a11:"Executed Indonesia smart factory project (KRW 200M revenue)",
+        vision_a12:"Technology transfer with Konkuk Univ. Glocal Holdings; lab-company founding & venture certification in progress",
         team_title:"Our Team", team_sub:"People driving innovation",
         team_ceo:"Jeong-min Jeon, CEO", team_ceo_role:"IoT & Wireless Networks",
         team_ceo_b1:"MS in CE • Embedded/HW", team_ceo_b2:"Gov. projects & awards",
-        team_core: "Core Members",
-        team_m1_title: "Lead AI Researcher",
-        team_m1_desc: "MS/BS in Electrical & Electronics (Korea Univ.). Multiple anomaly-detection publications",
-        team_m2_title: "Sales Director",
-        team_m2_desc: "Former IT Tech Director & Vice President at KOSDAQ-listed firm / B2B strategy & overseas sales",
-        team_m3_title: "Head of Integration",
-        team_m3_desc: "20 years of experience (ex-Samsung Senior Researcher)",
-        team_m4_title: "Head of Development",
-        team_m4_desc: "Ex-LG Energy Solution, Smart Factory/MES",
+        team_core:"Core Members",
+        team_m1_title:"Lead AI Researcher",
+        team_m1_desc:"MS/BS in Electrical & Electronics (Korea Univ.). Multiple anomaly-detection publications",
+        team_m2_title:"Sales Director",
+        team_m2_desc:"Former IT Tech Director & Vice President at KOSDAQ-listed firm / B2B strategy & overseas sales",
+        team_m3_title:"Head of Integration",
+        team_m3_desc:"20 years of experience (ex-Samsung Senior Researcher)",
+        team_m4_title:"Head of Development",
+        team_m4_desc:"Ex-LG Energy Solution, Smart Factory/MES",
         news_title:"News", news_sub:"CareOne updates", news_a:"Smart factory solution expansion", news_b:"Next-gen anomaly model", news_c:"Overseas partnerships",
         contact_title:"Get in Touch", contact_info:"Contact Info",
         form_name:"Name", form_email:"Email", form_msg:"Message", form_submit:"Send",
@@ -654,7 +678,38 @@
     $('#lang-kr').addEventListener('click', ()=>applyLang('ko'));
     $('#lang-en').addEventListener('click', ()=>applyLang('en'));
   </script>
+
+  <!-- Mini chart: Revenue spark (Chart.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('salesSpark');
+      if (!el) return;
+
+      const data = [88.5, 400, 2000]; // 단위: 백만 KRW (2026=2000M=2B)
+      new Chart(el, {
+        type: 'bar',
+        data: {
+          labels: ['2024', '2025', '2026'],
+          datasets: [{ label: 'Revenue (M KRW)', data }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: {
+            label: (ctx) => `${ctx.parsed.y}M KRW`
+          } } },
+          scales: {
+            x: { grid: { display: false } },
+            y: {
+              beginAtZero: true,
+              ticks: { callback: (v) => v + 'M' },
+              grid: { drawBorder: false }
+            }
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
