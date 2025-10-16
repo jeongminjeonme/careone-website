@@ -407,37 +407,46 @@
   </section>
 
   <!-- News -->
-  <section id="news" class="py-20 bg-gray-50 industrial-pattern">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12 fade-in">
-        <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="news_title">News</h2>
-        <p class="text-gray-600" data-i18n="news_sub">CareOne updates</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
-          <div class="h-40 bg-gradient-to-br from-green-500 to-emerald-600"></div>
-          <div class="p-6">
-            <div class="text-sm text-gray-500 mb-1">2025</div>
-            <h3 class="font-bold text-tech-blue" data-i18n="news_a">Smart factory solution expansion</h3>
-          </div>
-        </article>
-        <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
-          <div class="h-40 bg-gradient-to-br from-tech-blue to-light-blue"></div>
-          <div class="p-6">
-            <div class="text-sm text-gray-500 mb-1">R&amp;D</div>
-            <h3 class="font-bold text-tech-blue" data-i18n="news_b">Next-gen anomaly model</h3>
-          </div>
-        </article>
-        <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
-          <div class="h-40 bg-gradient-to-br from-light-blue to-blue-400"></div>
-          <div class="p-6">
-            <div class="text-sm text-gray-500 mb-1">Global</div>
-            <h3 class="font-bold text-tech-blue" data-i18n="news_c">Overseas partnerships</h3>
-          </div>
-        </article>
-      </div>
+<section id="news" class="py-20 bg-gray-50 industrial-pattern">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="news_title">News</h2>
+      <p class="text-gray-600" data-i18n="news_sub">CareOne updates</p>
     </div>
-  </section>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1) 벤처기업확인 인증 -->
+      <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
+        <img src="/venture-cert-2025.jpg"
+             alt="2025 벤처기업확인 인증"
+             class="h-40 w-full object-cover" loading="lazy" decoding="async">
+        <div class="p-6">
+          <h3 class="font-bold text-tech-blue" data-i18n="news_a">벤처기업확인 인증</h3>
+        </div>
+      </article>
+
+      <!-- 2) SK 기술나눔 기술이전 -->
+      <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
+        <img src="/skt-tech-transfer.jpg"
+             alt="SK그룹 기술나눔 기술이전 협약"
+             class="h-40 w-full object-cover" loading="lazy" decoding="async">
+        <div class="p-6">
+          <h3 class="font-bold text-tech-blue" data-i18n="news_b">SK그룹 기술나눔 기술이전 협약</h3>
+        </div>
+      </article>
+
+      <!-- 3) 해외 파트너십 -->
+      <article class="card-hover bg-white border rounded-lg overflow-hidden shadow fade-in">
+        <img src="/overseas-partnerships.jpg"
+             alt="해외 파트너십"
+             class="h-40 w-full object-cover" loading="lazy" decoding="async">
+        <div class="p-6">
+          <h3 class="font-bold text-tech-blue" data-i18n="news_c">해외 파트너십</h3>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
   <!-- Contact -->
   <section id="contact" class="py-20 bg-white">
@@ -466,7 +475,7 @@
           <h3 class="text-2xl font-bold text-tech-blue mb-4" data-i18n="contact_info">Contact Info</h3>
           <img src="office.png" alt="주식회사 케어원 사무실 사진" class="mb-4 rounded-xl shadow-lg max-w-full h-auto border border-gray-200">
           <ul class="space-y-3 text-gray-700">
-            <li><strong data-i18n="label_addr">Address:</strong> 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 창업보육센터 1동 102-1호</li>
+            <li><strong data-i18n="label_addr">Address:</strong> 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 스타트업그라운드 연구소기업 입주동 1동 102-1호</li>
             <li><strong data-i18n="label_tel">Tel:</strong> 070-4554-5104</li>
             <li><strong>Email:</strong> jmjeon0212@gmail.com</li>
           </ul>
@@ -583,7 +592,7 @@
         team_m3_desc:"삼성전자 책임연구원 출신 20년 경력",
         team_m4_title:"개발책임",
         team_m4_desc:"LG 에너지 솔루션 출신 스마트팩토리/MES 전담",
-        news_title:"최신 소식", news_sub:"케어원 업데이트", news_a:"스마트팩토리 솔루션 확장", news_b:"차세대 이상탐지 모델", news_c:"해외 파트너십",
+        news_title:"최신 소식", news_sub:"케어원 업데이트", news_a:"벤처기업확인 인증", news_b:"SK그룹 기술나눔 기업선정", news_c:"해외 파트너십",
         contact_title:"함께 혁신을 만들어가세요", contact_info:"연락처 정보",
         form_name:"성함", form_email:"이메일", form_msg:"문의 내용", form_submit:"문의하기",
         label_addr:"주소", label_tel:"전화", btn_map:"네이버 지도에서 길찾기",
@@ -640,7 +649,7 @@
         team_m3_desc:"20 years of experience (ex-Samsung Senior Researcher)",
         team_m4_title:"Head of Development",
         team_m4_desc:"Ex-LG Energy Solution, Smart Factory/MES",
-        news_title:"News", news_sub:"CareOne updates", news_a:"Smart factory solution expansion", news_b:"Next-gen anomaly model", news_c:"Overseas partnerships",
+        news_title:"News", news_sub:"CareOne updates", news_a:"Venture company verification certification", news_b:"SK Group technology sharing company selection", news_c:"Overseas partnerships",
         contact_title:"Get in Touch", contact_info:"Contact Info",
         form_name:"Name", form_email:"Email", form_msg:"Message", form_submit:"Send",
         label_addr:"Address", label_tel:"Tel", btn_map:"Open in Naver Map",
@@ -713,3 +722,4 @@
   </script>
 </body>
 </html>
+
