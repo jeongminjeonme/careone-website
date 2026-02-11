@@ -68,6 +68,11 @@
   </script>
 
   <style>
+    :root{
+      --warn:#F6C445;   /* yellow */
+      --alert:#FF4D4D;  /* red */
+    }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;overflow-x:hidden}
     body{margin:0;overflow-x:hidden;color:#212121;background:#ffffff}
@@ -239,6 +244,128 @@
       font-weight: 700;
       letter-spacing: .02em;
     }
+
+    /* ====== (추가) Dashboard background + Stateful Signal Panel ====== */
+    .hero-dashboard-wrap{
+      position:relative;
+      width:min(1080px, 100%);
+      margin: 0 auto;
+      text-align: left;
+    }
+    .dashboard-bg{
+      position:relative;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,.14), transparent 60%),
+        radial-gradient(circle at 82% 72%, rgba(66,165,245,.14), transparent 62%),
+        rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 26px 72px rgba(0,0,0,.28);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .dashboard-bg::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(520px circle at 25% 35%, rgba(66,165,245,.10), transparent 62%),
+        radial-gradient(520px circle at 78% 75%, rgba(13,71,161,.10), transparent 62%);
+      pointer-events:none;
+      opacity:.85;
+    }
+
+    .signal-panel{
+      position:absolute;
+      left:0; right:0;
+      bottom: 10px;
+      margin: 0 auto;
+      width: min(920px, 96%);
+      border-radius: 18px;
+      background: rgba(18, 26, 40, .88);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 28px 70px rgba(0,0,0,.35);
+      backdrop-filter: blur(14px);
+      overflow:hidden;
+      z-index: 5;
+      transform: translateZ(0);
+    }
+
+    /* 상단 은은한 점멸 (ALERT일 때만) */
+    .signal-panel::before{
+      content:"";
+      position:absolute;
+      left: 16px;
+      right: 16px;
+      top: -3px;
+      height: 8px;
+      border-radius: 999px;
+      background: transparent;
+      opacity: 0;
+      filter: blur(7px);
+      pointer-events:none;
+    }
+    @keyframes topPulse{
+      0%, 100% { opacity: .18; }
+      50% { opacity: .70; }
+    }
+    .state-alert::before{
+      background: linear-gradient(to right,
+        rgba(255,77,77,0),
+        rgba(255,77,77,.85),
+        rgba(255,77,77,0)
+      );
+      opacity: .45;
+      animation: topPulse 1.8s ease-in-out infinite;
+    }
+
+    .state-normal{ border-color: rgba(66,165,245,.60) !important; }
+    .state-watch{  border-color: rgba(246,196,69,.72) !important; }
+    .state-alert{  border-color: rgba(255,77,77,.78) !important; }
+
+    .signal-dot{
+      width:8px;height:8px;border-radius:999px;
+      background: #42A5F5;
+      box-shadow: 0 0 0 4px rgba(66,165,245,.18);
+    }
+    .dot-watch{
+      background: var(--warn);
+      box-shadow: 0 0 0 4px rgba(246,196,69,.18);
+    }
+    .dot-alert{
+      background: var(--alert);
+      box-shadow: 0 0 0 4px rgba(255,77,77,.18);
+    }
+
+    .alert-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      white-space: nowrap;
+    }
+    .badge-indicator{
+      width:8px;height:8px;border-radius:999px;
+      background: rgba(66,165,245,.90);
+      box-shadow: 0 0 0 3px rgba(66,165,245,.18);
+    }
+    .badge-normal{ border-color: rgba(66,165,245,.35); }
+    .badge-watch{  border-color: rgba(246,196,69,.55); }
+    .badge-alert{  border-color: rgba(255,77,77,.60); }
+
+    .badge-watch .badge-indicator{
+      background: var(--warn);
+      box-shadow: 0 0 0 3px rgba(246,196,69,.18);
+    }
+    .badge-alert .badge-indicator{
+      background: var(--alert);
+      box-shadow: 0 0 0 3px rgba(255,77,77,.18);
+    }
   </style>
 
   <!-- JSON-LD -->
@@ -363,7 +490,8 @@
     <canvas id="aiMesh" aria-hidden="true"></canvas>
     <div class="scanline" aria-hidden="true"></div>
 
-    <div class="max-w-5xl mx-auto px-4 pt-16 relative z-10">
+    <!-- max-w 확장(대시보드 배경을 넓게 보이도록) -->
+    <div class="max-w-6xl mx-auto px-4 pt-16 relative z-10">
       <div class="fade-in flex flex-wrap items-center justify-center gap-2 mb-5">
         <span class="glass-chip px-3 py-1 rounded-full text-xs md:text-sm text-white/95" data-i18n="hero_tag_ax">AX/DX</span>
         <span class="glass-chip px-3 py-1 rounded-full text-xs md:text-sm text-white/95" data-i18n="hero_tag_ai">AI Predictive Maintenance</span>
@@ -389,71 +517,127 @@
            data-i18n="hero_cta2">Contact Us</a>
       </div>
 
-      <!-- Signal monitor (always animates) -->
-      <div class="fade-in mt-10 mx-auto max-w-3xl glass-dark rounded-2xl p-4 md:p-5 text-left">
-        <div class="flex items-center justify-between gap-3 mb-3">
-          <div class="flex items-center gap-2">
-            <span class="inline-flex w-2 h-2 rounded-full bg-light-blue animate-pulse"></span>
-            <span class="text-sm md:text-[15px] font-semibold" data-i18n="hero_signal_title">AI Signal Monitor</span>
-          </div>
-          <span class="text-xs text-white/70" data-i18n="hero_signal_sub">Realtime feature extraction</span>
-        </div>
+      <!-- (변경) Dashboard background + Signal Panel overlay (ALERT 색/배지/점멸 포함) -->
+      <div class="fade-in mt-10 hero-dashboard-wrap">
+        <div class="dashboard-bg">
+          <!-- dashboard SVG (뒤 배경) -->
+          <svg viewBox="0 0 1080 520" class="w-full h-auto block relative z-[1]" aria-hidden="true">
+            <defs>
+              <linearGradient id="bgMint" x1="0" x2="1">
+                <stop offset="0" stop-color="#EAF7F6" stop-opacity="1"/>
+                <stop offset="1" stop-color="#FFFFFF" stop-opacity="1"/>
+              </linearGradient>
+            </defs>
 
-        <svg id="signalViz" viewBox="0 0 640 160" class="w-full h-28 md:h-32" aria-label="AI signal visualization">
-          <defs>
-            <linearGradient id="sigWave" x1="0" x2="1">
-              <stop offset="0" stop-color="#42A5F5" stop-opacity="0.95"></stop>
-              <stop offset="1" stop-color="#0D47A1" stop-opacity="0.95"></stop>
-            </linearGradient>
+            <rect x="0" y="0" width="1080" height="520" rx="18" fill="url(#bgMint)" opacity="0.92"/>
 
-            <linearGradient id="sigWaveGlow" x1="0" x2="1">
-              <stop offset="0" stop-color="#42A5F5" stop-opacity="0.28"></stop>
-              <stop offset="1" stop-color="#0D47A1" stop-opacity="0.28"></stop>
-            </linearGradient>
+            <!-- big dashboard window -->
+            <rect x="280" y="40" width="760" height="310" rx="18" fill="rgba(255,255,255,.88)" stroke="rgba(13,71,161,.10)"/>
+            <rect x="280" y="40" width="760" height="46" rx="18" fill="rgba(234,247,246,.96)"/>
+            <circle cx="308" cy="63" r="6" fill="rgba(66,165,245,.85)"/>
+            <circle cx="330" cy="63" r="6" fill="rgba(13,71,161,.35)"/>
+            <circle cx="352" cy="63" r="6" fill="rgba(13,71,161,.20)"/>
 
-            <linearGradient id="sigBars" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0" stop-color="#42A5F5" stop-opacity="0.95"></stop>
-              <stop offset="1" stop-color="#0D47A1" stop-opacity="0.55"></stop>
-            </linearGradient>
-          </defs>
+            <!-- header title -->
+            <text x="368" y="70" font-size="16" font-weight="700" fill="rgba(13,71,161,.86)">CARE ONE · DASHBOARD</text>
 
-          <rect x="0" y="0" width="640" height="160" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)"></rect>
+            <!-- tiles -->
+            <rect x="310" y="110" width="180" height="76" rx="14" fill="rgba(234,247,246,.86)" stroke="rgba(13,71,161,.06)"/>
+            <rect x="505" y="110" width="180" height="76" rx="14" fill="rgba(13,71,161,.06)" stroke="rgba(13,71,161,.06)"/>
+            <rect x="700" y="110" width="180" height="76" rx="14" fill="rgba(13,71,161,.06)" stroke="rgba(13,71,161,.06)"/>
+            <rect x="895" y="110" width="120" height="76" rx="14" fill="rgba(13,71,161,.06)" stroke="rgba(13,71,161,.06)"/>
 
-          <g opacity="0.25">
-            <line x1="20" y1="40" x2="620" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
-            <line x1="20" y1="80" x2="620" y2="80" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
-            <line x1="20" y1="120" x2="620" y2="120" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
-          </g>
+            <!-- chart area -->
+            <rect x="310" y="205" width="705" height="120" rx="16" fill="rgba(255,255,255,.92)" stroke="rgba(13,71,161,.08)"/>
+            <path d="M340 290 C390 250, 440 305, 490 270 C540 235, 590 295, 640 262 C690 230, 740 280, 790 252 C840 225, 900 278, 985 242"
+                  fill="none" stroke="rgba(13,71,161,.55)" stroke-width="4" stroke-linecap="round"/>
 
-          <g id="fftBars"></g>
+            <!-- side phone -->
+            <rect x="80" y="88" width="250" height="320" rx="22" fill="rgba(255,255,255,.84)" stroke="rgba(13,71,161,.10)"/>
+            <rect x="112" y="128" width="120" height="14" rx="7" fill="rgba(13,71,161,.25)"/>
+            <rect x="112" y="160" width="180" height="90" rx="16" fill="rgba(234,247,246,.78)" stroke="rgba(13,71,161,.06)"/>
+            <rect x="112" y="268" width="180" height="100" rx="16" fill="rgba(255,255,255,.80)" stroke="rgba(13,71,161,.06)"/>
 
-          <polyline id="waveGlow" fill="none" stroke="url(#sigWaveGlow)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" points=""></polyline>
-          <polyline id="waveLine" fill="none" stroke="url(#sigWave)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.97" points=""></polyline>
+            <!-- lower base space -->
+            <rect x="0" y="360" width="1080" height="160" fill="rgba(255,255,255,.0)"/>
+          </svg>
 
-          <line x1="20" y1="145" x2="620" y2="145" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
-        </svg>
+          <!-- signal panel overlay -->
+          <div id="signalPanel" class="signal-panel state-normal">
+            <div class="px-5 py-4 flex items-center justify-between gap-3 border-b border-white/10">
+              <div class="flex items-center gap-2 min-w-0">
+                <span id="signalDot" class="signal-dot"></span>
+                <span class="text-sm md:text-[15px] font-semibold truncate" data-i18n="hero_signal_title">AI Signal Monitor</span>
+              </div>
 
-        <div class="mt-3 grid grid-cols-3 gap-2 text-xs text-white/80">
-          <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-            <div class="flex items-center justify-between gap-2">
-              <span data-i18n="hero_signal_chip1">FFT / 특징값</span>
-              <span id="kpi-fft-val" class="kpi-val">--</span>
+              <div class="flex items-center gap-2 shrink-0">
+                <span id="alertBadge" class="alert-badge badge-normal" aria-label="signal status badge">
+                  <span class="badge-indicator" aria-hidden="true"></span>
+                  <span id="badgeText">정상</span>
+                </span>
+                <span class="text-xs text-white/70 hidden sm:inline" data-i18n="hero_signal_sub">Realtime feature extraction</span>
+              </div>
             </div>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-            <div class="flex items-center justify-between gap-2">
-              <span data-i18n="hero_signal_chip2">이상 점수</span>
-              <span id="kpi-score-val" class="kpi-val">--</span>
+
+            <div class="px-5 pt-4">
+              <svg id="signalViz" viewBox="0 0 640 160" class="w-full h-28 md:h-32" aria-label="AI signal visualization">
+                <defs>
+                  <linearGradient id="sigWave" x1="0" x2="1">
+                    <stop offset="0" stop-color="#42A5F5" stop-opacity="0.95"></stop>
+                    <stop offset="1" stop-color="#0D47A1" stop-opacity="0.95"></stop>
+                  </linearGradient>
+
+                  <linearGradient id="sigWaveGlow" x1="0" x2="1">
+                    <stop offset="0" stop-color="#42A5F5" stop-opacity="0.28"></stop>
+                    <stop offset="1" stop-color="#0D47A1" stop-opacity="0.28"></stop>
+                  </linearGradient>
+
+                  <linearGradient id="sigBars" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#42A5F5" stop-opacity="0.95"></stop>
+                    <stop offset="1" stop-color="#0D47A1" stop-opacity="0.55"></stop>
+                  </linearGradient>
+                </defs>
+
+                <rect x="0" y="0" width="640" height="160" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)"></rect>
+
+                <g opacity="0.25">
+                  <line x1="20" y1="40" x2="620" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+                  <line x1="20" y1="80" x2="620" y2="80" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+                  <line x1="20" y1="120" x2="620" y2="120" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+                </g>
+
+                <g id="fftBars"></g>
+
+                <polyline id="waveGlow" fill="none" stroke="url(#sigWaveGlow)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" points=""></polyline>
+                <polyline id="waveLine" fill="none" stroke="url(#sigWave)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.97" points=""></polyline>
+
+                <line x1="20" y1="145" x2="620" y2="145" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+              </svg>
+
+              <div class="mt-3 pb-5 grid grid-cols-3 gap-2 text-xs text-white/80">
+                <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <span data-i18n="hero_signal_chip1">FFT / 특징값</span>
+                    <span id="kpi-fft-val" class="kpi-val">--</span>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <span data-i18n="hero_signal_chip2">이상 점수</span>
+                    <span id="kpi-score-val" class="kpi-val">--</span>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <span data-i18n="hero_signal_chip3">조기 경보</span>
+                    <span id="kpi-alert-val" class="kpi-val">--</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-            <div class="flex items-center justify-between gap-2">
-              <span data-i18n="hero_signal_chip3">조기 경보</span>
-              <span id="kpi-alert-val" class="kpi-val">--</span>
-            </div>
-          </div>
-        </div>
-      </div>
+          </div><!-- /signalPanel -->
+        </div><!-- /dashboard-bg -->
+      </div><!-- /hero-dashboard-wrap -->
 
       <!-- Algorithm pipeline cards -->
       <div class="fade-in mt-10 grid sm:grid-cols-4 gap-4 text-left">
@@ -1467,7 +1651,6 @@
         loop();
       }
 
-      // start after layout
       requestAnimationFrame(start);
       let t=null;
       window.addEventListener('resize', ()=>{
@@ -1476,7 +1659,7 @@
       });
     })();
 
-    // Hero SignalViz (FFT + waveform + KPI numbers) - always runs
+    // Hero SignalViz (FFT + waveform + KPI numbers) + 상태 UI
     (function(){
       const svg = document.getElementById('signalViz');
       const barsGroup = document.getElementById('fftBars');
@@ -1486,6 +1669,12 @@
       const kpiFftVal = document.getElementById('kpi-fft-val');
       const kpiScoreVal = document.getElementById('kpi-score-val');
       const kpiAlertVal = document.getElementById('kpi-alert-val');
+
+      // 상태 UI 요소
+      const panel = document.getElementById('signalPanel');
+      const dot = document.getElementById('signalDot');
+      const badge = document.getElementById('alertBadge');
+      const badgeText = document.getElementById('badgeText');
 
       if(!svg || !barsGroup || !waveLine) return;
 
@@ -1500,6 +1689,10 @@
       const gap = 6;
       const barW = Math.max(6, Math.floor((W - marginX*2 - gap*(barCount-1)) / barCount));
       const step = barW + gap;
+
+      // thresholds
+      const TH_WATCH = 0.55;
+      const TH_ALERT = 0.78;
 
       // clear any existing rects (safe if hot-reload)
       barsGroup.innerHTML = '';
@@ -1521,6 +1714,38 @@
 
       function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
       function fmt2(n){ return (Math.round(n*100)/100).toFixed(2); }
+
+      function setState(score, lang){
+        if(!panel || !dot || !badge || !badgeText) {
+          return (lang === 'ko')
+            ? (score >= TH_ALERT ? '경보' : score >= TH_WATCH ? '주의' : '정상')
+            : (score >= TH_ALERT ? 'ALERT' : score >= TH_WATCH ? 'WATCH' : 'NORMAL');
+        }
+
+        panel.classList.remove('state-normal','state-watch','state-alert');
+        dot.classList.remove('dot-watch','dot-alert');
+        badge.classList.remove('badge-normal','badge-watch','badge-alert');
+
+        if(score >= TH_ALERT){
+          panel.classList.add('state-alert');
+          dot.classList.add('dot-alert');
+          badge.classList.add('badge-alert');
+          badgeText.textContent = (lang === 'ko') ? '경보' : 'ALERT';
+          return (lang === 'ko') ? '경보' : 'ALERT';
+        }
+        if(score >= TH_WATCH){
+          panel.classList.add('state-watch');
+          dot.classList.add('dot-watch');
+          badge.classList.add('badge-watch');
+          badgeText.textContent = (lang === 'ko') ? '주의' : 'WATCH';
+          return (lang === 'ko') ? '주의' : 'WATCH';
+        }
+
+        panel.classList.add('state-normal');
+        badge.classList.add('badge-normal');
+        badgeText.textContent = (lang === 'ko') ? '정상' : 'NORMAL';
+        return (lang === 'ko') ? '정상' : 'NORMAL';
+      }
 
       let raf = null;
       let lastKpiMs = 0;
@@ -1566,14 +1791,11 @@
         if(ms - lastKpiMs > 120){
           lastKpiMs = ms;
 
-          const fftEnergy = clamp(vSum / bars.length, 0, 1); // 0~1
+          const fftEnergy = clamp(vSum / bars.length, 0, 1);
           const score = clamp(0.18 + fftEnergy*0.82 + Math.sin(t*1.4)*0.07, 0, 1);
 
           const lang = (document.documentElement.lang === 'en') ? 'en' : 'ko';
-          let level;
-          if(score > 0.78) level = (lang==='ko') ? '경보' : 'ALERT';
-          else if(score > 0.55) level = (lang==='ko') ? '주의' : 'WATCH';
-          else level = (lang==='ko') ? '정상' : 'NORMAL';
+          const level = setState(score, lang);
 
           if(kpiFftVal) kpiFftVal.textContent = fmt2(fftEnergy);
           if(kpiScoreVal) kpiScoreVal.textContent = fmt2(score);
