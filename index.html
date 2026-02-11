@@ -235,16 +235,9 @@
       box-shadow: 0 14px 32px rgba(13,71,161,.20);
     }
 
-    /* KPI 값 강조(텍스트 선명도) */
     .kpi-val{
       font-weight: 700;
       letter-spacing: .02em;
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-      .hero-bg::before{ animation:none; }
-      .scanline{ animation:none; display:none; }
     }
   </style>
 
@@ -351,7 +344,7 @@
         </div>
       </div>
 
-      <!-- 모바일 메뉴 -->
+      <!-- Mobile menu -->
       <div id="mobile-menu" class="md:hidden hidden pb-3">
         <div class="grid gap-2 text-[15px]">
           <a href="#about" class="py-2" data-i18n="nav_about">About Us</a>
@@ -371,8 +364,6 @@
     <div class="scanline" aria-hidden="true"></div>
 
     <div class="max-w-5xl mx-auto px-4 pt-16 relative z-10">
-
-      <!-- AX/DX badges -->
       <div class="fade-in flex flex-wrap items-center justify-center gap-2 mb-5">
         <span class="glass-chip px-3 py-1 rounded-full text-xs md:text-sm text-white/95" data-i18n="hero_tag_ax">AX/DX</span>
         <span class="glass-chip px-3 py-1 rounded-full text-xs md:text-sm text-white/95" data-i18n="hero_tag_ai">AI Predictive Maintenance</span>
@@ -398,7 +389,7 @@
            data-i18n="hero_cta2">Contact Us</a>
       </div>
 
-      <!-- Hero 중앙: FFT/신호 파형 시각화 + KPI 숫자(실시간 업데이트) -->
+      <!-- Signal monitor (always animates) -->
       <div class="fade-in mt-10 mx-auto max-w-3xl glass-dark rounded-2xl p-4 md:p-5 text-left">
         <div class="flex items-center justify-between gap-3 mb-3">
           <div class="flex items-center gap-2">
@@ -428,7 +419,6 @@
 
           <rect x="0" y="0" width="640" height="160" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)"></rect>
 
-          <!-- subtle grid -->
           <g opacity="0.25">
             <line x1="20" y1="40" x2="620" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
             <line x1="20" y1="80" x2="620" y2="80" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
@@ -437,15 +427,12 @@
 
           <g id="fftBars"></g>
 
-          <!-- waveform (glow under) -->
           <polyline id="waveGlow" fill="none" stroke="url(#sigWaveGlow)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" points=""></polyline>
           <polyline id="waveLine" fill="none" stroke="url(#sigWave)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.97" points=""></polyline>
 
-          <!-- baseline -->
           <line x1="20" y1="145" x2="620" y2="145" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
         </svg>
 
-        <!-- KPI (숫자 실시간 업데이트) -->
         <div class="mt-3 grid grid-cols-3 gap-2 text-xs text-white/80">
           <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
             <div class="flex items-center justify-between gap-2">
@@ -541,7 +528,7 @@
           <div class="space-y-6">
             <div class="tech-card p-6">
               <h3 class="font-bold text-tech-blue mb-2" data-i18n="about_limit_title">The Limit Today</h3>
-              <p class="text-gray-700" data-i18n="about_limit_body">High cost and complexity make maintenance hard to adopt.</p>
+              <p class="text-gray-700" data-i18n="about_limit_body">High cost and complexity hinder adoption.</p>
             </div>
             <div class="tech-card p-6">
               <h3 class="font-bold text-tech-blue mb-2" data-i18n="about_approach_title">CareOne’s Approach</h3>
@@ -553,7 +540,7 @@
             </div>
             <div class="p-6 rounded-2xl text-white bg-gradient-to-r from-tech-blue to-light-blue shadow-lg shadow-tech-blue/15">
               <h3 class="font-bold mb-2" data-i18n="about_service_title">One-stop Service</h3>
-              <p data-i18n="about_service_body">From installation to operation and maintenance.</p>
+              <p data-i18n="about_service_body">Installation, operation and maintenance.</p>
             </div>
           </div>
         </div>
@@ -577,7 +564,6 @@
             </div>
           </div>
 
-          <!-- 적용 이미지 갤러리 -->
           <div class="mt-8 fade-in">
             <h4 class="text-lg font-bold text-tech-blue mb-3" data-i18n="about_values_gallery">적용 사례 이미지</h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -609,7 +595,6 @@
         <p class="text-gray-600 text-lg" data-i18n="sol_sub">Comprehensive AIoT platform for the shop floor</p>
       </div>
 
-      <!-- Edge → Cloud → MES 흐름 -->
       <div class="fade-in max-w-6xl mx-auto mb-10">
         <div class="tech-card p-6 md:p-7">
           <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-2">
@@ -687,7 +672,6 @@
         </div>
       </div>
 
-      <!-- Solution cards + 연결선 -->
       <div class="relative">
         <svg class="hidden lg:block absolute left-0 top-12 w-full h-24 pointer-events-none opacity-45" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
           <defs>
@@ -849,7 +833,7 @@
     </div>
   </section>
 
-  <!-- News (5 cards + filter + lightbox) -->
+  <!-- News -->
   <section id="news" class="py-20 smartfactory-bg smartfactory-grid">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-8 fade-in">
@@ -877,10 +861,6 @@
           </div>
           <div class="p-4 border-t border-gray-100">
             <span class="inline-flex items-center gap-1 rounded-full bg-tech-blue/10 px-3 py-1 text-[11px] font-medium text-tech-blue ring-1 ring-tech-blue/10">
-              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-              </svg>
               <span data-i18n="news_tag_cert">Certification</span>
             </span>
             <h3 class="mt-2 text-sm font-semibold text-gray-900 leading-snug" data-i18n="news_a">벤처기업확인 인증</h3>
@@ -897,10 +877,6 @@
           </div>
           <div class="p-4 border-t border-gray-100">
             <span class="inline-flex items-center gap-1 rounded-full bg-tech-blue/10 px-3 py-1 text-[11px] font-medium text-tech-blue ring-1 ring-tech-blue/10">
-              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 7h11m0 0-3-3m3 3-3 3M20 17H9m0 0 3-3m-3 3 3 3"/>
-              </svg>
               <span data-i18n="news_tag_transfer">Tech Transfer</span>
             </span>
             <h3 class="mt-2 text-sm font-semibold text-gray-900 leading-snug" data-i18n="news_b">SK그룹 기술나눔 기업선정</h3>
@@ -917,12 +893,6 @@
           </div>
           <div class="p-4 border-t border-gray-100">
             <span class="inline-flex items-center gap-1 rounded-full bg-tech-blue/10 px-3 py-1 text-[11px] font-medium text-tech-blue ring-1 ring-tech-blue/10">
-              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M2 12h20M12 2c2.5 2.7 4 6.3 4 10s-1.5 7.3-4 10M12 2C9.5 4.7 8 8.3 8 12s1.5 7.3 4 10"/>
-              </svg>
               <span data-i18n="news_tag_partner">Partnership</span>
             </span>
             <h3 class="mt-2 text-sm font-semibold text-gray-900 leading-snug" data-i18n="news_c">해외 파트너십</h3>
@@ -939,12 +909,6 @@
           </div>
           <div class="p-4 border-t border-gray-100">
             <span class="inline-flex items-center gap-1 rounded-full bg-tech-blue/10 px-3 py-1 text-[11px] font-medium text-tech-blue ring-1 ring-tech-blue/10">
-              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M7 7h10v10H7V7z"/>
-              </svg>
               <span data-i18n="news_tag_rnd">R&amp;D</span>
             </span>
             <h3 class="mt-2 text-sm font-semibold text-gray-900 leading-snug" data-i18n="news_d">연구소기업 등록증</h3>
@@ -961,12 +925,6 @@
           </div>
           <div class="p-4 border-t border-gray-100">
             <span class="inline-flex items-center gap-1 rounded-full bg-tech-blue/10 px-3 py-1 text-[11px] font-medium text-tech-blue ring-1 ring-tech-blue/10">
-              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 21h8M12 17v4M7 4h10v3a5 5 0 01-10 0V4z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M5 5v2a3 3 0 003 3M19 5v2a3 3 0 01-3 3"/>
-              </svg>
               <span data-i18n="news_tag_award">Award</span>
             </span>
             <h3 class="mt-2 text-sm font-semibold text-gray-900 leading-snug" data-i18n="news_e">진주 아이디어 경진대회 수상</h3>
@@ -1097,13 +1055,13 @@
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- JS: 메뉴/애니메이션/폼/i18n + Hero 애니메이션 -->
   <script>
     const $ = s => document.querySelector(s);
     const $$ = s => document.querySelectorAll(s);
 
     // Mobile menu
-    $('#mobile-menu-btn')?.addEventListener('click', () => $('#mobile-menu').classList.toggle('hidden'));
+    $('#mobile-menu-btn')?.addEventListener('click', () => $('#mobile-menu')?.classList.toggle('hidden'));
 
     // Fade-in
     const io = new IntersectionObserver(es => {
@@ -1188,7 +1146,7 @@
         vision_a8:"경상국립대 연구소기업 입주공간 입주기업 선정",
         vision_a9:"국립부경대학교 산학협력 프로젝트 협약",
         vision_a10:"25년 부천창업리그 장려상 (부천산업진흥원)",
-        vision_a11:"인도네시아 스마트팩토리 구축사업 개발 수행 (매출액 2억원)",
+        vision_a11:"인도네시아 스마트팩토리 구축사업 개발 수행",
         vision_a12:"건국대학교 글로컬기술지주 기술이전 및 연구소기업 설립 및 벤처확인기업",
 
         team_title:"케어원 핵심 연구팀", team_sub:"혁신을 이끄는 인재",
@@ -1368,8 +1326,8 @@
 
     const initial = new URL(location.href).searchParams.get('lang') === 'en' ? 'en' : 'ko';
     applyLang(initial);
-    $('#lang-kr').addEventListener('click', ()=>applyLang('ko'));
-    $('#lang-en').addEventListener('click', ()=>applyLang('en'));
+    $('#lang-kr')?.addEventListener('click', ()=>applyLang('ko'));
+    $('#lang-en')?.addEventListener('click', ()=>applyLang('en'));
 
     // News filter
     (function(){
@@ -1411,7 +1369,6 @@
       lightbox.classList.add('flex');
       document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox(){
       if(!lightbox || !lbImg) return;
       lightbox.classList.add('hidden');
@@ -1419,7 +1376,6 @@
       lbImg.src = '';
       document.body.style.overflow = '';
     }
-
     $$('[data-lightbox]').forEach(card=>{
       card.addEventListener('click', ()=>{
         const img = card.querySelector('img');
@@ -1428,19 +1384,16 @@
         openLightbox(img.currentSrc || img.src, img.alt, title);
       });
     });
-
     lbClose?.addEventListener('click', closeLightbox);
     lightbox?.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
     window.addEventListener('keydown', (e)=>{
       if(e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) closeLightbox();
     });
 
-    // Hero AI Mesh
+    // Hero AI Mesh (always runs)
     (function(){
-      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const canvas = document.getElementById('aiMesh');
-      if(!canvas || reduce) return;
-
+      if(!canvas) return;
       const ctx = canvas.getContext('2d');
       let w=0, h=0, dpr=1;
       let particles = [];
@@ -1448,13 +1401,12 @@
 
       function resize(){
         dpr = Math.min(2, window.devicePixelRatio || 1);
-        w = canvas.clientWidth;
-        h = canvas.clientHeight;
+        w = canvas.clientWidth || window.innerWidth;
+        h = canvas.clientHeight || window.innerHeight;
         canvas.width = Math.floor(w * dpr);
         canvas.height = Math.floor(h * dpr);
         ctx.setTransform(dpr,0,0,dpr,0,0);
       }
-
       function makeParticles(){
         const count = Math.max(28, Math.min(70, Math.floor((w*h)/22000)));
         particles = Array.from({length: count}, () => ({
@@ -1465,7 +1417,6 @@
           r: Math.random()*1.4 + 0.6
         }));
       }
-
       function update(){
         for(const p of particles){
           p.x += p.vx;
@@ -1476,11 +1427,10 @@
           if(p.y > h+20) p.y = -20;
         }
       }
-
       function draw(){
         ctx.clearRect(0,0,w,h);
-
         const max = 140;
+
         for(let i=0;i<particles.length;i++){
           const p=particles[i];
           for(let j=i+1;j<particles.length;j++){
@@ -1498,7 +1448,6 @@
             }
           }
         }
-
         for(const p of particles){
           ctx.fillStyle='rgba(66,165,245,0.85)';
           ctx.beginPath();
@@ -1506,13 +1455,11 @@
           ctx.fill();
         }
       }
-
       function loop(){
         update();
         draw();
         rafId = requestAnimationFrame(loop);
       }
-
       function start(){
         if(rafId) cancelAnimationFrame(rafId);
         resize();
@@ -1520,7 +1467,8 @@
         loop();
       }
 
-      start();
+      // start after layout
+      requestAnimationFrame(start);
       let t=null;
       window.addEventListener('resize', ()=>{
         clearTimeout(t);
@@ -1528,9 +1476,8 @@
       });
     })();
 
-    // Hero SignalViz (FFT + waveform + KPI numbers)
+    // Hero SignalViz (FFT + waveform + KPI numbers) - always runs
     (function(){
-      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const svg = document.getElementById('signalViz');
       const barsGroup = document.getElementById('fftBars');
       const waveLine = document.getElementById('waveLine');
@@ -1540,7 +1487,7 @@
       const kpiScoreVal = document.getElementById('kpi-score-val');
       const kpiAlertVal = document.getElementById('kpi-alert-val');
 
-      if(!svg || !barsGroup || !waveLine || reduce) return;
+      if(!svg || !barsGroup || !waveLine) return;
 
       const W = 640;
       const marginX = 20;
@@ -1553,6 +1500,9 @@
       const gap = 6;
       const barW = Math.max(6, Math.floor((W - marginX*2 - gap*(barCount-1)) / barCount));
       const step = barW + gap;
+
+      // clear any existing rects (safe if hot-reload)
+      barsGroup.innerHTML = '';
 
       const bars = [];
       for(let i=0;i<barCount;i++){
@@ -1612,7 +1562,7 @@
         waveLine.setAttribute('points', points.trim());
         if(waveGlow) waveGlow.setAttribute('points', points.trim());
 
-        // KPI: 숫자 텍스트 업데이트(너무 잦은 DOM 업데이트 방지: 약 8~10fps)
+        // KPI update (throttle DOM updates)
         if(ms - lastKpiMs > 120){
           lastKpiMs = ms;
 
@@ -1651,7 +1601,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const el = document.getElementById('salesSpark');
-      if (!el) return;
+      if (!el || typeof Chart === 'undefined') return;
 
       const data = [88.5, 700, 2000]; // 단위: 백만 KRW
       new Chart(el, {
@@ -1663,9 +1613,10 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: { legend: { display: false }, tooltip: { callbacks: {
-            label: (ctx) => `${ctx.parsed.y}M KRW`
-          } } },
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: (ctx) => `${ctx.parsed.y}M KRW` } }
+          },
           scales: {
             x: { grid: { display: false } },
             y: {
