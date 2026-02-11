@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Title / Description (네이버 가이드: 제목 40자 이내 권장) -->
+  <!-- Title / Description -->
   <title data-i18n="meta_title">케어원 CareOne — AIoT 예지보전·설비시스템의 혁신</title>
   <meta name="description" content="케어원은 AIoT 기반 예지보전으로 다운타임을 줄이고 MES 연계로 설비 성능과 안전을 높이는 스마트팩토리 통합 솔루션 기업입니다." data-i18n-attr="content:meta_desc">
 
@@ -73,7 +73,7 @@
     body{margin:0;overflow-x:hidden;color:#212121;background:#ffffff}
     .min-h-screen-fix{min-height:100svh}
 
-    /* Hero: AI/Algorithm mood (grid drift + scanline + mesh canvas) */
+    /* Hero: AX/DX + algorithm mood */
     .hero-bg{
       position:relative;
       z-index:0;
@@ -82,7 +82,7 @@
       background:
         radial-gradient(circle at 18% 22%, rgba(66,165,245,.35) 0%, transparent 48%),
         radial-gradient(circle at 82% 75%, rgba(13,71,161,.35) 0%, transparent 55%),
-        linear-gradient(rgba(11,16,32,.88), rgba(11,16,32,.88)),
+        linear-gradient(rgba(11,16,32,.90), rgba(11,16,32,.90)),
         url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
     }
     .hero-bg::before{
@@ -111,6 +111,7 @@
       from{ transform: translate3d(0,0,0); }
       to{ transform: translate3d(96px,96px,0); }
     }
+
     #aiMesh{
       position:absolute;
       inset:0;
@@ -137,18 +138,15 @@
       to{ transform: translateY(65%); }
     }
 
-    /* General motion */
     .fade-in{opacity:0;transform:translateY(18px);transition:all .5s ease}
     .fade-in.visible{opacity:1;transform:translateY(0)}
 
-    /* Pattern blocks */
     .industrial-pattern{
       background-image:
         radial-gradient(circle at 25% 25%, rgba(66,165,245,.08) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(13,71,161,.08) 0%, transparent 50%);
     }
 
-    /* News 섹션: 스마트팩토리 느낌(블루프린트 그리드 + 은은한 그라데이션) */
     .smartfactory-bg{
       background:
         radial-gradient(circle at 18% 20%, rgba(66,165,245,.18) 0%, transparent 55%),
@@ -163,7 +161,6 @@
       background-position: center;
     }
 
-    /* Premium cards (unified tech tone) */
     .tech-card{
       position:relative;
       overflow:hidden;
@@ -190,7 +187,6 @@
       border-color: rgba(66,165,245,.35);
     }
 
-    /* Glass chips (hero badges / algorithm steps) */
     .glass-chip{
       background: rgba(255,255,255,.10);
       border: 1px solid rgba(66,165,245,.25);
@@ -202,7 +198,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Nav underline (premium) */
     .nav-link{
       position:relative;
       padding: 0.15rem 0;
@@ -220,6 +215,31 @@
       opacity:.9;
     }
     .nav-link:hover::after{ width:100%; }
+
+    .filter-btn{
+      border: 1px solid rgba(13,71,161,.12);
+      background: rgba(255,255,255,.78);
+      color: #0D47A1;
+      backdrop-filter: blur(12px);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    }
+    .filter-btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(13,71,161,.12);
+      border-color: rgba(66,165,245,.35);
+    }
+    .filter-btn.active{
+      border-color: transparent;
+      background: linear-gradient(to right, rgba(66,165,245,1), rgba(13,71,161,1));
+      color: #ffffff;
+      box-shadow: 0 14px 32px rgba(13,71,161,.20);
+    }
+
+    /* KPI 값 강조(텍스트 선명도) */
+    .kpi-val{
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
 
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
@@ -239,15 +259,25 @@
     "url": "https://www.careone-analysis.store/",
     "logo": "https://www.careone-analysis.store/logo.png",
     "description": "AIoT 기반 예지보전 솔루션 기업",
-    "email": "mailto:jmjeon0212@gmail.com",
+    "email": "mailto:ceo@careonebiz.com",
     "telephone": "+82-70-4554-5104",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "KR",
-      "addressRegion": "Gyeongsangnam-do",
-      "addressLocality": "Jinju-si",
-      "streetAddress": "경상남도 진주시 진주대로 501, 경상대학교 가좌캠퍼스 창업보육센터 1동 102-1호"
-    },
+    "faxNumber": "0504-081-5104",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressCountry": "KR",
+        "addressRegion": "Gyeongsangnam-do",
+        "addressLocality": "Jinju-si",
+        "streetAddress": "경상남도 진주시 진주대로 501, 경상대 가좌캠퍼스 스타트업그라운드 연구소기업 입주동 1동 102-1호"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressCountry": "KR",
+        "addressRegion": "Gyeonggi-do",
+        "addressLocality": "Hwaseong-si",
+        "streetAddress": "경기도 화성시 동탄기흥로 560 907호"
+      }
+    ],
     "contactPoint": [{
       "@type": "ContactPoint",
       "telephone": "+82-70-4554-5104",
@@ -257,6 +287,7 @@
     }]
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -272,6 +303,7 @@
     }
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -298,6 +330,7 @@
           <img src="/logo.png" alt="주식회사 케어원 로고" class="h-8 w-auto" loading="lazy">
           <span class="text-xl">CareOne</span>
         </a>
+
         <div class="hidden md:flex gap-8 text-[15px]">
           <a href="#about" class="nav-link hover:text-tech-blue" data-i18n="nav_about">About Us</a>
           <a href="#solutions" class="nav-link hover:text-tech-blue" data-i18n="nav_solutions">Solutions</a>
@@ -306,6 +339,7 @@
           <a href="#news" class="nav-link hover:text-tech-blue" data-i18n="nav_news">News</a>
           <a href="#contact" class="nav-link hover:text-tech-blue" data-i18n="nav_contact">Contact</a>
         </div>
+
         <div class="flex items-center gap-2">
           <button id="lang-kr" class="px-2 py-1 text-sm rounded border bg-white/60 hover:bg-white" aria-label="한국어">KR</button>
           <button id="lang-en" class="px-2 py-1 text-sm rounded border bg-white/60 hover:bg-white" aria-label="English">EN</button>
@@ -337,6 +371,7 @@
     <div class="scanline" aria-hidden="true"></div>
 
     <div class="max-w-5xl mx-auto px-4 pt-16 relative z-10">
+
       <!-- AX/DX badges -->
       <div class="fade-in flex flex-wrap items-center justify-center gap-2 mb-5">
         <span class="glass-chip px-3 py-1 rounded-full text-xs md:text-sm text-white/95" data-i18n="hero_tag_ax">AX/DX</span>
@@ -363,13 +398,84 @@
            data-i18n="hero_cta2">Contact Us</a>
       </div>
 
+      <!-- Hero 중앙: FFT/신호 파형 시각화 + KPI 숫자(실시간 업데이트) -->
+      <div class="fade-in mt-10 mx-auto max-w-3xl glass-dark rounded-2xl p-4 md:p-5 text-left">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex w-2 h-2 rounded-full bg-light-blue animate-pulse"></span>
+            <span class="text-sm md:text-[15px] font-semibold" data-i18n="hero_signal_title">AI Signal Monitor</span>
+          </div>
+          <span class="text-xs text-white/70" data-i18n="hero_signal_sub">Realtime feature extraction</span>
+        </div>
+
+        <svg id="signalViz" viewBox="0 0 640 160" class="w-full h-28 md:h-32" aria-label="AI signal visualization">
+          <defs>
+            <linearGradient id="sigWave" x1="0" x2="1">
+              <stop offset="0" stop-color="#42A5F5" stop-opacity="0.95"></stop>
+              <stop offset="1" stop-color="#0D47A1" stop-opacity="0.95"></stop>
+            </linearGradient>
+
+            <linearGradient id="sigWaveGlow" x1="0" x2="1">
+              <stop offset="0" stop-color="#42A5F5" stop-opacity="0.28"></stop>
+              <stop offset="1" stop-color="#0D47A1" stop-opacity="0.28"></stop>
+            </linearGradient>
+
+            <linearGradient id="sigBars" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#42A5F5" stop-opacity="0.95"></stop>
+              <stop offset="1" stop-color="#0D47A1" stop-opacity="0.55"></stop>
+            </linearGradient>
+          </defs>
+
+          <rect x="0" y="0" width="640" height="160" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)"></rect>
+
+          <!-- subtle grid -->
+          <g opacity="0.25">
+            <line x1="20" y1="40" x2="620" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+            <line x1="20" y1="80" x2="620" y2="80" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+            <line x1="20" y1="120" x2="620" y2="120" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+          </g>
+
+          <g id="fftBars"></g>
+
+          <!-- waveform (glow under) -->
+          <polyline id="waveGlow" fill="none" stroke="url(#sigWaveGlow)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" points=""></polyline>
+          <polyline id="waveLine" fill="none" stroke="url(#sigWave)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.97" points=""></polyline>
+
+          <!-- baseline -->
+          <line x1="20" y1="145" x2="620" y2="145" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+        </svg>
+
+        <!-- KPI (숫자 실시간 업데이트) -->
+        <div class="mt-3 grid grid-cols-3 gap-2 text-xs text-white/80">
+          <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="flex items-center justify-between gap-2">
+              <span data-i18n="hero_signal_chip1">FFT / 특징값</span>
+              <span id="kpi-fft-val" class="kpi-val">--</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="flex items-center justify-between gap-2">
+              <span data-i18n="hero_signal_chip2">이상 점수</span>
+              <span id="kpi-score-val" class="kpi-val">--</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="flex items-center justify-between gap-2">
+              <span data-i18n="hero_signal_chip3">조기 경보</span>
+              <span id="kpi-alert-val" class="kpi-val">--</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Algorithm pipeline cards -->
       <div class="fade-in mt-10 grid sm:grid-cols-4 gap-4 text-left">
         <div class="glass-dark rounded-2xl p-4">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3m6 3h3M6 6H3m15.5 3.5-2.2 2.2M7.7 11.7 5.5 9.5M12 18v3m6-6h3M6 18H3m15.5-3.5-2.2-2.2M7.7 12.3 5.5 14.5"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3m6 3h3M6 6H3m15.5 3.5-2.2 2.2M7.7 11.7 5.5 9.5"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 14h10v7H7v-7z"/>
               </svg>
             </div>
             <div>
@@ -498,55 +604,155 @@
   <!-- Solutions -->
   <section id="solutions" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-14 fade-in">
+      <div class="text-center mb-10 fade-in">
         <h2 class="text-4xl font-bold text-tech-blue mb-3" data-i18n="sol_title">Integrated Solutions</h2>
         <p class="text-gray-600 text-lg" data-i18n="sol_sub">Comprehensive AIoT platform for the shop floor</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <article class="tech-card p-8 fade-in text-center">
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
-            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1M4 12H3m18 0h-1M6.34 6.34l-.7-.7M18.36 6.34l.7-.7M8 17a4 4 0 118 0"/>
-            </svg>
+      <!-- Edge → Cloud → MES 흐름 -->
+      <div class="fade-in max-w-6xl mx-auto mb-10">
+        <div class="tech-card p-6 md:p-7">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-2">
+            <div>
+              <h3 class="text-lg font-bold text-tech-blue" data-i18n="sol_flow_title">Edge → Cloud → MES Flow</h3>
+              <p class="text-sm text-gray-600 mt-1" data-i18n="sol_flow_sub">Signal collection → feature extraction → AI inference → operational action</p>
+            </div>
+            <div class="text-xs text-gray-500" data-i18n="sol_flow_note">Modular rollout, start small and scale.</div>
           </div>
-          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_sensing">Smart Sensing</h3>
-          <p class="text-gray-600" data-i18n="sol_sensing_desc">Real-time current/vibration data capture</p>
-          <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
-        </article>
 
-        <article class="tech-card p-8 fade-in text-center">
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
-            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 13l3 3 7-7"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_ai">AI Prediction</h3>
-          <p class="text-gray-600" data-i18n="sol_ai_desc">Pattern learning for early anomaly detection</p>
-          <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
-        </article>
+          <div class="mt-6 flex flex-col md:flex-row items-stretch md:items-center gap-4">
+            <div class="flex-1 rounded-2xl border border-gray-200/70 bg-white/80 p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/15">
+                  <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3m6 3h3M6 6H3m15.5 3.5-2.2 2.2M7.7 11.7 5.5 9.5"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 14h10v7H7v-7z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-tech-blue" data-i18n="sol_flow_edge">Edge Sensing</div>
+                  <div class="text-xs text-gray-600" data-i18n="sol_flow_edge_sub">Current / Vibration / Temp</div>
+                </div>
+              </div>
+            </div>
 
-        <article class="tech-card p-8 fade-in text-center">
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
-            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6M4 6h16M4 18h16"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_integration">System Integration</h3>
-          <p class="text-gray-600" data-i18n="sol_integration_desc">Unified ops with MES/ERP</p>
-          <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
-        </article>
+            <div class="hidden md:flex items-center justify-center w-10 opacity-70">
+              <svg class="w-6 h-6 text-tech-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h12m0 0-4-4m4 4-4 4"/>
+              </svg>
+            </div>
 
-        <article class="tech-card p-8 fade-in text-center">
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
-            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.5 12C4 6.5 7.5 4 12 4s8 2.5 9.5 8c-1.5 5.5-5 8-9.5 8S4 17.5 2.5 12zM12 9a3 3 0 100 6 3 3 0 000-6z"/>
-            </svg>
+            <div class="flex-1 rounded-2xl border border-gray-200/70 bg-white/80 p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/15">
+                  <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 014-4 5 5 0 019.7-1.5A4 4 0 1120 15H3z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17h10"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-tech-blue" data-i18n="sol_flow_cloud">Cloud AI</div>
+                  <div class="text-xs text-gray-600" data-i18n="sol_flow_cloud_sub">Anomaly / Prediction / RUL</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center w-10 opacity-70">
+              <svg class="w-6 h-6 text-tech-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h12m0 0-4-4m4 4-4 4"/>
+              </svg>
+            </div>
+
+            <div class="flex-1 rounded-2xl border border-gray-200/70 bg-white/80 p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/15">
+                  <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9h6M9 15h6"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-tech-blue" data-i18n="sol_flow_mes">MES / ERP</div>
+                  <div class="text-xs text-gray-600" data-i18n="sol_flow_mes_sub">Alert / Work order / KPI</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_monitoring">24/7 Monitoring</h3>
-          <p class="text-gray-600" data-i18n="sol_monitoring_desc">Continuous watch & instant alerts</p>
-          <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
-        </article>
+
+          <div class="mt-4 grid sm:grid-cols-3 gap-3 text-sm text-gray-700">
+            <div class="rounded-xl border border-gray-200/70 bg-white/60 px-4 py-3" data-i18n="sol_flow_chip1">Edge에서 신호 수집 및 전처리</div>
+            <div class="rounded-xl border border-gray-200/70 bg-white/60 px-4 py-3" data-i18n="sol_flow_chip2">Cloud에서 특징 추출/모델 추론</div>
+            <div class="rounded-xl border border-gray-200/70 bg-white/60 px-4 py-3" data-i18n="sol_flow_chip3">MES/ERP로 운영 액션 연결</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution cards + 연결선 -->
+      <div class="relative">
+        <svg class="hidden lg:block absolute left-0 top-12 w-full h-24 pointer-events-none opacity-45" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="solLine" x1="0" x2="1">
+              <stop offset="0" stop-color="#42A5F5" stop-opacity="0.75"></stop>
+              <stop offset="1" stop-color="#0D47A1" stop-opacity="0.75"></stop>
+            </linearGradient>
+            <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#42A5F5" fill-opacity="0.85"></path>
+            </marker>
+          </defs>
+          <circle cx="140" cy="60" r="5.5" fill="#42A5F5" fill-opacity="0.9"></circle>
+          <circle cx="380" cy="60" r="5.5" fill="#42A5F5" fill-opacity="0.9"></circle>
+          <circle cx="620" cy="60" r="5.5" fill="#42A5F5" fill-opacity="0.9"></circle>
+          <circle cx="860" cy="60" r="5.5" fill="#42A5F5" fill-opacity="0.9"></circle>
+          <path d="M160 60 L360 60" stroke="url(#solLine)" stroke-width="2.5" stroke-dasharray="6 8" marker-end="url(#arrowHead)"></path>
+          <path d="M400 60 L600 60" stroke="url(#solLine)" stroke-width="2.5" stroke-dasharray="6 8" marker-end="url(#arrowHead)"></path>
+          <path d="M640 60 L840 60" stroke="url(#solLine)" stroke-width="2.5" stroke-dasharray="6 8" marker-end="url(#arrowHead)"></path>
+        </svg>
+
+        <div class="relative z-10 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <article class="tech-card p-8 fade-in text-center">
+            <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
+              <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1M4 12H3m18 0h-1M6.34 6.34l-.7-.7M18.36 6.34l.7-.7M8 17a4 4 0 118 0"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_sensing">Smart Sensing</h3>
+            <p class="text-gray-600" data-i18n="sol_sensing_desc">Real-time current/vibration data capture</p>
+            <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
+          </article>
+
+          <article class="tech-card p-8 fade-in text-center">
+            <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
+              <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 13l3 3 7-7"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_ai">AI Prediction</h3>
+            <p class="text-gray-600" data-i18n="sol_ai_desc">Pattern learning for early anomaly detection</p>
+            <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
+          </article>
+
+          <article class="tech-card p-8 fade-in text-center">
+            <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
+              <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6M4 6h16M4 18h16"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_integration">System Integration</h3>
+            <p class="text-gray-600" data-i18n="sol_integration_desc">Unified ops with MES/ERP</p>
+            <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
+          </article>
+
+          <article class="tech-card p-8 fade-in text-center">
+            <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-light-blue to-tech-blue flex items-center justify-center shadow-lg shadow-tech-blue/20">
+              <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.5 12C4 6.5 7.5 4 12 4s8 2.5 9.5 8c-1.5 5.5-5 8-9.5 8S4 17.5 2.5 12zM12 9a3 3 0 100 6 3 3 0 000-6z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-tech-blue mb-2" data-i18n="sol_monitoring">24/7 Monitoring</h3>
+            <p class="text-gray-600" data-i18n="sol_monitoring_desc">Continuous watch & instant alerts</p>
+            <div class="mt-5 h-[2px] w-full bg-gradient-to-r from-tech-blue to-light-blue opacity-40"></div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -592,8 +798,8 @@
             <li data-i18n="vision_a8">Selected for GNUE lab-company workspace tenancy</li>
             <li data-i18n="vision_a9">Signed industry–academia project with Pukyong National University</li>
             <li data-i18n="vision_a10">Won Encouragement Award at Bucheon Startup League 2025</li>
-            <li><span class="font-bold" data-i18n="vision_a11">Executed Indonesia smart factory project (KRW 600M revenue)</span></li>
-            <li><span class="font-bold" data-i18n="vision_a12">Tech transfer with Konkuk Univ. Glocal Holdings; lab-company founding & venture certification in progress</span></li>
+            <li><span class="font-bold" data-i18n="vision_a11">Executed Indonesia smart factory project</span></li>
+            <li><span class="font-bold" data-i18n="vision_a12">Tech transfer; lab-company founding & venture certification in progress</span></li>
           </ul>
         </div>
       </div>
@@ -643,24 +849,29 @@
     </div>
   </section>
 
-  <!-- News (5 cards + lightbox) -->
+  <!-- News (5 cards + filter + lightbox) -->
   <section id="news" class="py-20 smartfactory-bg smartfactory-grid">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12 fade-in">
+      <div class="text-center mb-8 fade-in">
         <h2 class="text-4xl font-bold text-tech-blue mb-2" data-i18n="news_title">News</h2>
         <p class="text-gray-600" data-i18n="news_sub">CareOne updates</p>
       </div>
 
+      <div class="fade-in flex flex-wrap justify-center gap-2 mb-8">
+        <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold" type="button" data-news-filter="all" data-i18n="news_filter_all">전체</button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" type="button" data-news-filter="cert" data-i18n="news_filter_cert">인증</button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" type="button" data-news-filter="transfer" data-i18n="news_filter_transfer">기술이전</button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" type="button" data-news-filter="partner" data-i18n="news_filter_partner">해외</button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" type="button" data-news-filter="rnd" data-i18n="news_filter_rnd">R&D</button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" type="button" data-news-filter="award" data-i18n="news_filter_award">수상</button>
+      </div>
+
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
 
-        <!-- 1) 벤처기업확인 인증 -->
-        <article
-          class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
-          data-lightbox
-        >
+        <article class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
+                 data-lightbox data-news-card data-cat="cert">
           <div class="h-72 w-full bg-white p-3">
-            <img src="/venture_cert.png"
-                 alt="벤처기업확인 인증"
+            <img src="/venture_cert.png" alt="벤처기업확인 인증"
                  class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                  loading="lazy" decoding="async">
           </div>
@@ -677,14 +888,10 @@
           </div>
         </article>
 
-        <!-- 2) SK그룹 기술나눔 -->
-        <article
-          class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
-          data-lightbox
-        >
+        <article class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
+                 data-lightbox data-news-card data-cat="transfer">
           <div class="h-72 w-full overflow-hidden bg-gray-50">
-            <img src="/SK_cert.jpg"
-                 alt="SK그룹 기술나눔"
+            <img src="/SK_cert.jpg" alt="SK그룹 기술나눔"
                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                  loading="lazy" decoding="async">
           </div>
@@ -701,14 +908,10 @@
           </div>
         </article>
 
-        <!-- 3) 해외 파트너십 -->
-        <article
-          class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
-          data-lightbox
-        >
+        <article class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
+                 data-lightbox data-news-card data-cat="partner">
           <div class="h-72 w-full overflow-hidden bg-gray-50">
-            <img src="/Global.png"
-                 alt="해외 파트너십"
+            <img src="/Global.png" alt="해외 파트너십"
                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                  loading="lazy" decoding="async">
           </div>
@@ -727,14 +930,10 @@
           </div>
         </article>
 
-        <!-- 4) 연구소기업 등록증 -->
-        <article
-          class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
-          data-lightbox
-        >
+        <article class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
+                 data-lightbox data-news-card data-cat="rnd">
           <div class="h-72 w-full bg-white p-3">
-            <img src="/lab_company_cert.png"
-                 alt="연구소기업 등록증"
+            <img src="/lab_company_cert.png" alt="연구소기업 등록증"
                  class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                  loading="lazy" decoding="async">
           </div>
@@ -753,14 +952,10 @@
           </div>
         </article>
 
-        <!-- 5) 진주 아이디어 경진대회 수상 -->
-        <article
-          class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
-          data-lightbox
-        >
+        <article class="fade-in group cursor-pointer overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-light-blue/40"
+                 data-lightbox data-news-card data-cat="award">
           <div class="h-72 w-full bg-white p-3">
-            <img src="/jinju_idea_award.png"
-                 alt="진주 아이디어 경진대회 수상"
+            <img src="/jinju_idea_award.png" alt="진주 아이디어 경진대회 수상"
                  class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                  loading="lazy" decoding="async">
           </div>
@@ -810,11 +1005,20 @@
         <div class="tech-card p-8 fade-in">
           <h3 class="text-2xl font-bold text-tech-blue mb-4" data-i18n="contact_info">Contact Info</h3>
           <img src="office.png" alt="주식회사 케어원 사무실 사진" class="mb-4 rounded-2xl shadow-lg max-w-full h-auto border border-gray-200">
+
           <ul class="space-y-3 text-gray-700">
-            <li><strong data-i18n="label_addr">Address:</strong> 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 스타트업그라운드 연구소기업 입주동 1동 102-1호</li>
+            <li>
+              <strong data-i18n="label_addr">Address:</strong>
+              <div class="mt-2 text-sm leading-relaxed">
+                <div><span class="font-semibold">본점</span> : 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 스타트업그라운드 연구소기업 입주동 1동 102-1호</div>
+                <div class="mt-1"><span class="font-semibold">R&amp;D 센터</span> : 경기도 화성시 동탄기흥로 560 907호</div>
+              </div>
+            </li>
             <li><strong data-i18n="label_tel">Tel:</strong> 070-4554-5104</li>
-            <li><strong>Email:</strong> jmjeon0212@gmail.com</li>
+            <li><strong>FAX:</strong> 0504-081-5104</li>
+            <li><strong>Email:</strong> ceo@careonebiz.com</li>
           </ul>
+
           <a href="https://naver.me/5cqAY84n" target="_blank" rel="noopener"
              class="inline-block mt-6 px-6 py-3 rounded-full text-white bg-gradient-to-r from-tech-blue to-light-blue hover:brightness-110 shadow-lg shadow-tech-blue/15"
              data-i18n="btn_map">Open in Naver Map</a>
@@ -831,6 +1035,7 @@
           <div class="text-2xl font-bold text-light-blue mb-3">CareOne</div>
           <p class="text-gray-300 text-sm" data-i18n="footer_tag">Innovation in legacy equipment.</p>
         </div>
+
         <div>
           <h4 class="font-semibold mb-3" data-i18n="footer_sol">Solutions</h4>
           <ul class="text-gray-300 text-sm space-y-2">
@@ -840,6 +1045,7 @@
             <li data-i18n="sol_monitoring">24/7 Monitoring</li>
           </ul>
         </div>
+
         <div>
           <h4 class="font-semibold mb-3" data-i18n="footer_company">Company</h4>
           <ul class="text-gray-300 text-sm space-y-2">
@@ -848,6 +1054,7 @@
             <li><a href="#news" data-i18n="nav_news">News</a></li>
           </ul>
         </div>
+
         <div>
           <h4 class="font-semibold mb-3" data-i18n="footer_connect">Connect</h4>
           <ul class="text-gray-300 text-sm space-y-2">
@@ -857,13 +1064,22 @@
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
-        © 2025 CareOne. All rights reserved.
+
+      <div class="border-t border-gray-700 mt-8 pt-6">
+        <div class="text-gray-300 text-xs leading-relaxed space-y-1">
+          <div>(주) 케어원 대표이사 : 전 정 민</div>
+          <div>본점 : 경남 진주시 진주대로 501, 경상대 가좌캠퍼스 스타트업그라운드 연구소기업 입주동 1동 102-1호 / R&amp;D 센터 : 경기도 화성시 동탄기흥로 560 907호</div>
+          <div>TEL : (070)-4554-5104 FAX : 0504-081-5104 E-mail : ceo@careonebiz.com</div>
+          <div class="pt-2 text-gray-400">본사이트의 컨텐츠는 저작권법의 보호를 받는 바 무단전재, 복사, 배포 등을 금합니다.</div>
+        </div>
+        <div class="mt-4 text-center text-gray-400 text-sm">
+          © 2024. (주)케어원 All rights reserved.
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Lightbox (News 이미지 확대) -->
+  <!-- Lightbox -->
   <div id="lightbox" class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/70 p-4">
     <div class="relative w-full max-w-5xl">
       <button id="lightbox-close"
@@ -881,7 +1097,7 @@
     </div>
   </div>
 
-  <!-- JS: 메뉴/애니메이션/폼/i18n + 라이트박스 + Hero AI Mesh -->
+  <!-- JS -->
   <script>
     const $ = s => document.querySelector(s);
     const $$ = s => document.querySelectorAll(s);
@@ -923,6 +1139,12 @@
         hero_flow3:"예측", hero_flow3_sub:"고장 확률 · RUL",
         hero_flow4:"알림/조치", hero_flow4_sub:"대응 시점 제시",
 
+        hero_signal_title:"AI 신호 모니터",
+        hero_signal_sub:"실시간 특징 추출",
+        hero_signal_chip1:"FFT / 특징값",
+        hero_signal_chip2:"이상 점수",
+        hero_signal_chip3:"조기 경보",
+
         about_title:"CareOne이 만드는 변화",
         about_limit_title:"현재의 한계", about_limit_body:"높은 비용과 복잡성으로 도입이 어려움",
         about_approach_title:"CareOne의 접근", about_approach_body:"모듈형 도입과 합리적 비용으로 누구나 시작",
@@ -935,6 +1157,19 @@
         about_values_gallery:"적용 사례 이미지",
 
         sol_title:"통합 솔루션", sol_sub:"현장에 맞춘 종합 AIoT 플랫폼",
+        sol_flow_title:"Edge → Cloud → MES 흐름",
+        sol_flow_sub:"신호 수집 → 특징 추출 → AI 추론 → 운영 액션",
+        sol_flow_note:"작게 시작하고 단계적으로 확장",
+        sol_flow_edge:"Edge 센싱",
+        sol_flow_edge_sub:"전류 / 진동 / 온도",
+        sol_flow_cloud:"Cloud AI",
+        sol_flow_cloud_sub:"이상탐지 / 예측 / RUL",
+        sol_flow_mes:"MES / ERP",
+        sol_flow_mes_sub:"알림 / 작업지시 / KPI",
+        sol_flow_chip1:"Edge에서 신호 수집 및 전처리",
+        sol_flow_chip2:"Cloud에서 특징 추출/모델 추론",
+        sol_flow_chip3:"MES/ERP로 운영 액션 연결",
+
         sol_sensing:"스마트 센싱", sol_sensing_desc:"전류/진동 등 실시간 데이터",
         sol_ai:"AI 예측 분석", sol_ai_desc:"패턴학습 기반 이상 조기감지",
         sol_integration:"시스템 통합", sol_integration_desc:"MES/ERP 연동 운영 일원화",
@@ -953,7 +1188,7 @@
         vision_a8:"경상국립대 연구소기업 입주공간 입주기업 선정",
         vision_a9:"국립부경대학교 산학협력 프로젝트 협약",
         vision_a10:"25년 부천창업리그 장려상 (부천산업진흥원)",
-        vision_a11:"인도네시아 스마트팩토리 구축사업 개발 수행 (매출액 6억원)",
+        vision_a11:"인도네시아 스마트팩토리 구축사업 개발 수행 (매출액 2억원)",
         vision_a12:"건국대학교 글로컬기술지주 기술이전 및 연구소기업 설립 및 벤처확인기업",
 
         team_title:"케어원 핵심 연구팀", team_sub:"혁신을 이끄는 인재",
@@ -961,13 +1196,13 @@
         team_ceo_b1:"경희대 컴퓨터공학 석사 • IoT H/W &S/W", team_ceo_b2:"국가과제· NIA 대상 및 KT통신사상 수상",
         team_core:"핵심 구성",
         team_m1_title:"AI 책임연구원",
-        team_m1_desc:"고려대학교 전기전자공학 학·석사 졸업. 이상탐지 논문 다수 게재",
+        team_m1_desc:"이상탐지 논문 다수",
         team_m2_title:"영업이사",
-        team_m2_desc:"코스닥 등록기업 IT기술상무 및 부사장 역임 / B2B 전략 및 해외 영업",
+        team_m2_desc:"B2B 전략 및 해외 영업",
         team_m3_title:"통합솔루션 책임",
-        team_m3_desc:"삼성전자 책임연구원 출신 20년 경력",
+        team_m3_desc:"20년 경력",
         team_m4_title:"개발책임",
-        team_m4_desc:"LG 에너지 솔루션 출신 스마트팩토리/MES 전담",
+        team_m4_desc:"스마트팩토리/MES",
 
         news_title:"최신 소식", news_sub:"케어원 업데이트",
         news_a:"벤처기업확인 인증",
@@ -981,6 +1216,13 @@
         news_tag_rnd:"R&D",
         news_tag_award:"수상",
 
+        news_filter_all:"전체",
+        news_filter_cert:"인증",
+        news_filter_transfer:"기술이전",
+        news_filter_partner:"해외",
+        news_filter_rnd:"R&D",
+        news_filter_award:"수상",
+
         contact_title:"함께 혁신을 만들어가세요", contact_info:"연락처 정보",
         form_name:"성함", form_email:"이메일", form_msg:"문의 내용", form_submit:"문의하기",
         label_addr:"주소", label_tel:"전화", btn_map:"네이버 지도에서 길찾기",
@@ -988,6 +1230,7 @@
         footer_tag:"기존 설비시스템에 혁신을 담다.",
         footer_sol:"솔루션", footer_company:"회사", footer_connect:"연결", footer_partner:"파트너십", footer_support:"기술 지원"
       },
+
       en: {
         meta_title:"CareOne — Minimize Downtime. Maximize Performance.",
         meta_desc:"CareOne delivers AIoT predictive maintenance to cut downtime and boost equipment performance.",
@@ -1007,6 +1250,12 @@
         hero_flow3:"Prediction", hero_flow3_sub:"Failure risk · RUL",
         hero_flow4:"Action", hero_flow4_sub:"Alert & recommended time",
 
+        hero_signal_title:"AI Signal Monitor",
+        hero_signal_sub:"Realtime feature extraction",
+        hero_signal_chip1:"FFT / Features",
+        hero_signal_chip2:"Anomaly Score",
+        hero_signal_chip3:"Early Warning",
+
         about_title:"How CareOne Changes the Game",
         about_limit_title:"The Limit Today", about_limit_body:"High cost and complexity hinder adoption.",
         about_approach_title:"CareOne’s Approach", about_approach_body:"Modular rollout at reasonable cost for everyone.",
@@ -1019,6 +1268,19 @@
         about_values_gallery:"Use-case images",
 
         sol_title:"Integrated Solutions", sol_sub:"Comprehensive AIoT platform for the shop floor",
+        sol_flow_title:"Edge → Cloud → MES Flow",
+        sol_flow_sub:"Signal collection → feature extraction → AI inference → operational action",
+        sol_flow_note:"Start small, scale modularly",
+        sol_flow_edge:"Edge Sensing",
+        sol_flow_edge_sub:"Current / Vibration / Temp",
+        sol_flow_cloud:"Cloud AI",
+        sol_flow_cloud_sub:"Anomaly / Prediction / RUL",
+        sol_flow_mes:"MES / ERP",
+        sol_flow_mes_sub:"Alert / Work order / KPI",
+        sol_flow_chip1:"Signal capture & preprocessing at the edge",
+        sol_flow_chip2:"Feature extraction & inference in the cloud",
+        sol_flow_chip3:"Operational actions via MES/ERP",
+
         sol_sensing:"Smart Sensing", sol_sensing_desc:"Real-time current/vibration data",
         sol_ai:"AI Prediction", sol_ai_desc:"Early anomaly detection via pattern learning",
         sol_integration:"System Integration", sol_integration_desc:"Unified ops with MES/ERP",
@@ -1037,21 +1299,21 @@
         vision_a8:"Selected for GNUE lab-company workspace tenancy",
         vision_a9:"Signed industry–academia project with Pukyong National University",
         vision_a10:"Won Encouragement Award at Bucheon Startup League 2025",
-        vision_a11:"Executed Indonesia smart factory project (KRW 200M revenue)",
-        vision_a12:"Technology transfer with Konkuk Univ. Glocal Holdings; lab-company founding & venture certification in progress",
+        vision_a11:"Executed Indonesia smart factory project",
+        vision_a12:"Technology transfer; lab-company founding & venture certification in progress",
 
         team_title:"Our Team", team_sub:"People driving innovation",
         team_ceo:"Jeong-min Jeon, CEO", team_ceo_role:"IoT & Wireless Networks",
         team_ceo_b1:"MS in CE • Embedded/HW", team_ceo_b2:"Gov. projects & awards",
         team_core:"Core Members",
         team_m1_title:"Lead AI Researcher",
-        team_m1_desc:"MS/BS in Electrical & Electronics (Korea Univ.). Multiple anomaly-detection publications",
+        team_m1_desc:"Multiple anomaly-detection publications",
         team_m2_title:"Sales Director",
-        team_m2_desc:"Former IT Tech Director & Vice President at KOSDAQ-listed firm / B2B strategy & overseas sales",
+        team_m2_desc:"B2B strategy & overseas sales",
         team_m3_title:"Head of Integration",
-        team_m3_desc:"20 years of experience (ex-Samsung Senior Researcher)",
+        team_m3_desc:"20 years of experience",
         team_m4_title:"Head of Development",
-        team_m4_desc:"Ex-LG Energy Solution, Smart Factory/MES",
+        team_m4_desc:"Smart Factory/MES",
 
         news_title:"News", news_sub:"CareOne updates",
         news_a:"Venture company verification certification",
@@ -1064,6 +1326,13 @@
         news_tag_partner:"Partnership",
         news_tag_rnd:"R&D",
         news_tag_award:"Award",
+
+        news_filter_all:"All",
+        news_filter_cert:"Certification",
+        news_filter_transfer:"Tech Transfer",
+        news_filter_partner:"Overseas",
+        news_filter_rnd:"R&D",
+        news_filter_award:"Award",
 
         contact_title:"Get in Touch", contact_info:"Contact Info",
         form_name:"Name", form_email:"Email", form_msg:"Message", form_submit:"Send",
@@ -1101,6 +1370,31 @@
     applyLang(initial);
     $('#lang-kr').addEventListener('click', ()=>applyLang('ko'));
     $('#lang-en').addEventListener('click', ()=>applyLang('en'));
+
+    // News filter
+    (function(){
+      const btns = $$('[data-news-filter]');
+      const cards = $$('[data-news-card]');
+      if(!btns.length || !cards.length) return;
+
+      function apply(filter){
+        cards.forEach(card=>{
+          const cat = card.getAttribute('data-cat');
+          const show = (filter === 'all') || (cat === filter);
+          card.classList.toggle('hidden', !show);
+        });
+      }
+
+      btns.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          apply(btn.getAttribute('data-news-filter'));
+        });
+      });
+
+      apply('all');
+    })();
 
     // News lightbox
     const lightbox = $('#lightbox');
@@ -1141,7 +1435,7 @@
       if(e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) closeLightbox();
     });
 
-    // Hero AI Mesh (algorithm vibe)
+    // Hero AI Mesh
     (function(){
       const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const canvas = document.getElementById('aiMesh');
@@ -1233,16 +1527,133 @@
         t=setTimeout(()=>start(), 180);
       });
     })();
+
+    // Hero SignalViz (FFT + waveform + KPI numbers)
+    (function(){
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const svg = document.getElementById('signalViz');
+      const barsGroup = document.getElementById('fftBars');
+      const waveLine = document.getElementById('waveLine');
+      const waveGlow = document.getElementById('waveGlow');
+
+      const kpiFftVal = document.getElementById('kpi-fft-val');
+      const kpiScoreVal = document.getElementById('kpi-score-val');
+      const kpiAlertVal = document.getElementById('kpi-alert-val');
+
+      if(!svg || !barsGroup || !waveLine || reduce) return;
+
+      const W = 640;
+      const marginX = 20;
+
+      const barsBottom = 145;
+      const barsTop = 85;
+      const barsMaxH = barsBottom - barsTop;
+
+      const barCount = 36;
+      const gap = 6;
+      const barW = Math.max(6, Math.floor((W - marginX*2 - gap*(barCount-1)) / barCount));
+      const step = barW + gap;
+
+      const bars = [];
+      for(let i=0;i<barCount;i++){
+        const x = marginX + i*step;
+        const r = document.createElementNS('http://www.w3.org/2000/svg','rect');
+        r.setAttribute('x', String(x));
+        r.setAttribute('width', String(barW));
+        r.setAttribute('rx', '2.5');
+        r.setAttribute('fill', 'url(#sigBars)');
+        r.setAttribute('y', String(barsBottom-2));
+        r.setAttribute('height', '2');
+        r.setAttribute('opacity', '0.95');
+        barsGroup.appendChild(r);
+        bars.push(r);
+      }
+
+      function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+      function fmt2(n){ return (Math.round(n*100)/100).toFixed(2); }
+
+      let raf = null;
+      let lastKpiMs = 0;
+
+      function tick(ms){
+        const t = ms / 1000;
+
+        // Bars: pseudo FFT bins
+        let vSum = 0;
+        for(let i=0;i<bars.length;i++){
+          const s1 = Math.sin(t*2.2 + i*0.55);
+          const s2 = Math.sin(t*1.05 + i*0.18);
+          const noise = (Math.sin(t*3.7 + i*1.7) + Math.sin(t*5.1 + i*0.9)) * 0.06;
+          const v = clamp(0.12 + 0.55*(s1*0.5+0.5) + 0.33*(s2*0.5+0.5) + noise, 0.08, 1);
+          vSum += v;
+
+          const h = 4 + v * (barsMaxH - 4);
+          const y = barsBottom - h;
+          bars[i].setAttribute('y', String(y));
+          bars[i].setAttribute('height', String(h));
+          bars[i].setAttribute('opacity', String(0.55 + v*0.45));
+        }
+
+        // Waveform
+        const pts = 84;
+        const dx = (W - marginX*2) / (pts-1);
+        const mid = 58;
+        const baseAmp = 18;
+        const freq = 0.20;
+        const speed = 2.4;
+
+        let points = '';
+        for(let k=0;k<pts;k++){
+          const x = marginX + k*dx;
+          const mod = 0.55 + 0.45*Math.sin(t*0.9 + k*0.08);
+          const y = mid + Math.sin(k*freq + t*speed) * baseAmp * mod + Math.sin(t*1.7 + k*0.12) * 2.2;
+          points += `${x.toFixed(2)},${y.toFixed(2)} `;
+        }
+        waveLine.setAttribute('points', points.trim());
+        if(waveGlow) waveGlow.setAttribute('points', points.trim());
+
+        // KPI: 숫자 텍스트 업데이트(너무 잦은 DOM 업데이트 방지: 약 8~10fps)
+        if(ms - lastKpiMs > 120){
+          lastKpiMs = ms;
+
+          const fftEnergy = clamp(vSum / bars.length, 0, 1); // 0~1
+          const score = clamp(0.18 + fftEnergy*0.82 + Math.sin(t*1.4)*0.07, 0, 1);
+
+          const lang = (document.documentElement.lang === 'en') ? 'en' : 'ko';
+          let level;
+          if(score > 0.78) level = (lang==='ko') ? '경보' : 'ALERT';
+          else if(score > 0.55) level = (lang==='ko') ? '주의' : 'WATCH';
+          else level = (lang==='ko') ? '정상' : 'NORMAL';
+
+          if(kpiFftVal) kpiFftVal.textContent = fmt2(fftEnergy);
+          if(kpiScoreVal) kpiScoreVal.textContent = fmt2(score);
+          if(kpiAlertVal) kpiAlertVal.textContent = level;
+        }
+
+        raf = requestAnimationFrame(tick);
+      }
+
+      raf = requestAnimationFrame(tick);
+
+      document.addEventListener('visibilitychange', ()=>{
+        if(document.hidden && raf){
+          cancelAnimationFrame(raf);
+          raf = null;
+        }else if(!document.hidden && !raf){
+          raf = requestAnimationFrame(tick);
+        }
+      });
+    })();
   </script>
 
-  <!-- Mini chart: Revenue spark (Chart.js) -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const el = document.getElementById('salesSpark');
       if (!el) return;
 
-      const data = [88.5, 400, 2000]; // 단위: 백만 KRW (2026=2000M=2B)
+      const data = [88.5, 700, 2000]; // 단위: 백만 KRW
       new Chart(el, {
         type: 'bar',
         data: {
@@ -1269,4 +1680,3 @@
   </script>
 </body>
 </html>
-
